@@ -1,4 +1,4 @@
-[ **中文** | [English](./README.md) \]
+[ **English** | [中文](./README_ZH.md) \]
 <p align="center">
     <br>
     <img src="./fig/logo-all.png?raw=true" width="800" height="381"/>
@@ -12,85 +12,92 @@
 <br>
 </p>
 
-# 太一（Taiyi）：中英双语生物医学大模型
+# Taiyi (太一)：Bilingual Biomedical Large Language Model in Chinese and English
 
-**项目背景**
+**Project Background**
 
-随着深度学习技术的迅速发展，类ChatGPT这样的大型语言模型在自然语言处理领域已经取得了显著的进展。面向生物医学领域，大语言模型有助于医生与患者之间的沟通，提供有用的医学信息，并在辅助诊疗、生物医学知识发现、药物研发、个性化医疗方案等方面具有巨大潜力。然而，在AI社区中，已有的开源生物医学大模型相对较少，且大多主要专注于单语（中文或英语）的医学问答对话。因此，大连理工大学信息检索研究室团队展开了面向生物医学大模型的研究，并发布初版中英双语生物医学大模型——太一（Taiyi），旨在探索大模型在生物医学领域中英双语的多种自然语言处理任务上的能力。
+With the rapid development of deep learning technology, large language models like ChatGPT have made significant progress in the field of natural language processing. In the context of biomedical applications, large language models facilitate communication between healthcare professionals and patients, provide valuable medical information, and have enormous potential in assisting diagnosis, biomedical knowledge discovery, drug development, and personalized healthcare solutions, among others. However, in the AI community, there is a relative scarcity of existing open-source biomedical large models, with most of them primarily focused on monolingual medical question-answering dialogues in either Chinese or English. Therefore, this project embarks on research dedicated to large models for the biomedical domain and introduces the initial version of a bilingual Chinese-English biomedical large model named 'Taiyi', iming to explore the capabilities of large models in handling a variety of Chinese-English natural language processing tasks in the biomedical field.
 
 
-**项目特色**
+**Project Highlights**
 
-- **丰富的生物医学训练资源**：面向生物医学领域，本项目收集整理了丰富的中英双语生物医学自然语言处理（BioNLP）训练语料，总共包含38个中文数据集，覆盖10种BioNLP任务；131个英文数据集，覆盖12种BioNLP任务。并根据任务类型，设计制定任务数据统一格式，对数据集进行统一格式转换。
-- **出色的中英双语BioNLP多任务能力**：设计并构建中英双语指令数据集（超过100W条样本），用于大模型指令微调，使模型具备出色的中英双语生物医学智能问答、医患对话、报告生成、信息抽取、机器翻译、标题生成、文本分类等多种BioNLP能力。
-- **开源信息**：开源中英双语BioNLP数据集整理信息、太一大模型权重、模型推理部署脚本。
+- **Abundant Biomedical Training Resources**：For the biomedical domain, this project has collected and organized a diverse set of Chinese-English biomedical Natural Language Processing (BioNLP) training datasets. This collection includes a total of 38 Chinese datasets covering 10 BioNLP tasks and 131 English datasets covering 12 BioNLP tasks. To facilitate task-specific requirements, standardized data formats have been designed and applied for consistent formatting across all datasets.
+- **Exceptional Bilingual BioNLP Multi-Task Capability in Chinese and English**：Designing and constructing a bilingual Chinese-English instruction dataset (comprising over 1 million samples) for large model fine-tuning, enabling the model to excel in various BioNLP tasks including intelligent biomedical question-answering, doctor-patient dialogues, report generation, information extraction, machine translation, headline generation, text classification, and more.
+- **Open Source Information**：Open-source Chinese-English BioNLP dataset curation details, Taiyi large model weights, and model inference deployment scripts.
 
-**整体框架图**
+**Overview of Framework**
 
 <p align="center">
     <br>
-    <img src="./fig/overview_zh.png?raw=true" width="800" height="451"/>
+    <img src="./fig/overview_en.png?raw=true" width="800" height="451"/>
     <br>
 </p>
 
-## 目录
-- [太一（Taiyi）：中英双语生物医学大模型](#太一taiyi中英双语生物医学大模型)
-  - [目录](#目录)
-  - [模型主要功能](#模型主要功能)
-    - [1. 智能问答](#1-智能问答)
-    - [2. 医患对话](#2-医患对话)
-    - [3. 医疗报告生成](#3-医疗报告生成)
-    - [4. 生物医学信息抽取](#4-生物医学信息抽取)
-      - [4.1 命名实体识别](#41-命名实体识别)
-      - [4.2 关系抽取](#42-关系抽取)
-      - [4.3 事件抽取](#43-事件抽取)
-    - [5. 机器翻译](#5-机器翻译)
-    - [6. 标题生成](#6-标题生成)
-    - [7. 文本分类](#7-文本分类)
-    - [8. 文本相关性判断](#8-文本相关性判断)
-  - [训练数据](#训练数据)
-    - [数据收集](#数据收集)
-    - [数据统一格式](#数据统一格式)
-    - [指令数据集](#指令数据集)
+## Contents
+- [Taiyi (太一)：Bilingual Biomedical Large Language Model in Chinese and English](#taiyi-太一bilingual-biomedical-large-language-model-in-chinese-and-english)
+  - [Contents](#contents)
+  - [Main Functions](#main-functions)
+    - [1. Question Answering](#1-question-answering)
+    - [2. Doctor-Patient Dialogue](#2-doctor-patient-dialogue)
+    - [3. Medical Report Generation](#3-medical-report-generation)
+    - [4. Biomedical Information Extraction](#4-biomedical-information-extraction)
+      - [4.1 Named Entity Recognition](#41-named-entity-recognition)
+      - [4.2 Relation Extraction](#42-relation-extraction)
+      - [4.3 Event Extraction](#43-event-extraction)
+    - [5. Machine Translation](#5-machine-translation)
+    - [6. Title Generation](#6-title-generation)
+    - [7. Text Classification](#7-text-classification)
+    - [8. Text Semantic Similarity](#8-text-semantic-similarity)
+  - [Training Data](#training-data)
+    - [Data Collection](#data-collection)
+    - [Standardized Data Format](#standardized-data-format)
+    - [Instruction-Tuning Data](#instruction-tuning-data)
   - [模型训练](#模型训练)
   - [模型部署](#模型部署)
-  - [局限性与未来工作](#局限性与未来工作)
-  - [开发团队](#开发团队)
-  - [致谢](#致谢)
-  - [免责声明](#免责声明)
-  - [引用](#引用)
+  - [Limitation and Future Work](#limitation-and-future-work)
+  - [Development Team](#development-team)
+  - [Acknowledgements](#acknowledgements)
+  - [Disclaimer](#disclaimer)
+  - [Citation](#citation)
   - [Star History](#star-history)
 
 
 
-## 模型主要功能
-### 1. 智能问答
-**任务介绍**
+## Main Functions
+### 1. Question Answering
+**Task Introduction**
 
-生物医学智能问答旨在帮助用户获取有关生物医学领域的答案和信息。有助于更有效地管理生物医学信息、提高医疗决策的质量，提升生物医学教育的效果。
+Biomedical question answering is designed to assist users in obtaining answers and information related to the field of biomedical science through a question-and-answer format. It contributes to more effective management of biomedical information, enhances the quality of medical decision-making, and improves the effectiveness of biomedical education.
 
-**中文实例展示**
+<details>
+  <summary><b>Examples</b></summary>
 
-**输入：** 我最近感到头晕和恶心，这可能是什么原因？
+**Example in Chinese**
 
-```
-头晕和恶心可以有多种原因，包括感冒、中耳炎、低血糖、贫血等。为了获得确切的答案，建议咨询医生进行详细检查。
-```
-
-**英文实例展示**
-
-**输入：** 我最近感到头晕和恶心，这可能是什么原因？
+**Input：** 我最近感到头晕和恶心，这可能是什么原因？
 
 ```
 头晕和恶心可以有多种原因，包括感冒、中耳炎、低血糖、贫血等。为了获得确切的答案，建议咨询医生进行详细检查。
 ```
 
-### 2. 医患对话
-**任务介绍**
+**Example in English**
 
-太一可模拟医生与患者进行自然对话。这种对话可以涵盖病情咨询、疾病预防、药物咨询等各种医疗主题。
+**Input：** 我最近感到头晕和恶心，这可能是什么原因？
 
-**中文实例展示**
+```
+头晕和恶心可以有多种原因，包括感冒、中耳炎、低血糖、贫血等。为了获得确切的答案，建议咨询医生进行详细检查。
+```
+</details>
+
+### 2. Doctor-Patient Dialogue
+**Task Introduction**
+
+The Taiyi model is capable of simulating natural language conversations between doctors and patients. These conversations can encompass various biomedical topics, including medical inquiries, disease prevention, medication consultations, and more.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
 
 ```
 用户：我最近感到头痛和喉咙痛。
@@ -99,7 +106,7 @@
 太一：我很抱歉听到您不舒服。可以告诉我头痛和喉咙痛的症状持续多久了吗？
 ```
 
-**英文实例展示**
+**Example in English**
 
 ```
 用户：我最近感到头痛和喉咙痛。
@@ -107,15 +114,19 @@
 用户：我最近感到头痛和喉咙痛。
 太一：我很抱歉听到您不舒服。可以告诉我头痛和喉咙痛的症状持续多久了吗？
 ```
+</details>
 
-### 3. 医疗报告生成
-**任务介绍**
+### 3. Medical Report Generation
+**Task Introduction**
 
-医疗报告自动生成旨在对问诊过程中进行信息的总结，任务要求语言模型能够依据病人自述和医患对话， 生成具有规定格式的医疗报告。这项任务可以帮助医生更有效地处理大量的医疗信息，并为患者提供准确的诊断和治疗建议。
+Medical report auto-generation aims to summarize information during the diagnostic process. The task requires the language model to generate medical reports in a specified format based on patient self-reports and doctor-patient dialogues. This task can assist doctors in handling a large volume of medical information more effectively and provide accurate diagnoses and treatment recommendations to patients.
 
-**实例展示**
+<details>
+  <summary><b>Examples</b></summary>
 
-**用户输入：** 
+**Example in Chinese**
+
+**User inputs：** 
 ```
 根据对话，生成医疗报告：
 
@@ -133,7 +144,7 @@
 
 患者：好的，谢谢你，医生。
 ```
-**太一输出：**  
+**Taiyi outputs：**  
 ```   
 患者姓名：未知
 日期：未知
@@ -149,23 +160,62 @@
 
      注意：这只是一个基本的报告，并不能代替真正的医疗咨询。如果你有任何健康问题，建议你寻求专业医生的帮助。
 ```    
+**Example in English**
 
+**User inputs：** 
+```
+根据对话，生成医疗报告：
 
-### 4. 生物医学信息抽取
-#### 4.1 命名实体识别
-**任务介绍**
+患者：你好，医生。我最近总是感觉头疼，尤其是在用电脑工作后。
 
-生物医学命名实体识别旨在从文本中识别出预定义的生物医学实体。这些实体可以包括疾病、药物、基因、蛋白质等生物医学概念。
+医生：你好，我很抱歉听到你不舒服。头疼的感觉是怎样的？是持续性的还是阵发性的？
 
-**中文实例展示**
+患者：它更像是阵发性的，特别是在我长时间盯着电脑屏幕后。
 
-**用户输入：** 
+医生：我明白了。你在工作或者休息的时候有没有定期休息和做眼保健操？
+
+患者：我试过，但并没有太大的帮助。
+
+医生：我明白了。这可能是由于用眼过度导致的，建议你尝试调整一下工作习惯，比如每隔一小时休息一下，远眺一下远处的风景。如果症状持续不减或者加重，建议你去医院进行进一步的检查。
+
+患者：好的，谢谢你，医生。
+```
+**Taiyi outputs：**  
+```   
+患者姓名：未知
+日期：未知
+主诉：
+     患者报告在使用电脑工作后经常感到头疼，症状呈阵发性，尤其在长时间盯着电脑屏幕后。
+     临床观察：
+     患者试过定期休息和做眼保健操，但并没有太大的帮助。
+     初步诊断：
+     可能是由于用眼过度导致的头疼。
+     建议：
+     1. 调整工作习惯，比如每隔一小时休息一下，远眺一下远处的风景。
+     2. 如果症状持续不减或者加重，建议去医院进行进一步的检查。
+
+     注意：这只是一个基本的报告，并不能代替真正的医疗咨询。如果你有任何健康问题，建议你寻求专业医生的帮助。
+```    
+</details>
+
+### 4. Biomedical Information Extraction
+#### 4.1 Named Entity Recognition
+**Task Introduction**
+
+Biomedical named entity recognition aims to identify predefined biomedical entities from text. These entities can include biomedical concepts such as diseases, drugs, genes, proteins, and more.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
+
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -174,15 +224,41 @@
      "疾病": "微小血管出血"
 ``` 
 
-**英文实例展示**
+**Example in English**
 
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
+``` 
+     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
+     
+     "临床表现": "脑实质和脑膜水肿、充血" 
+     
+     "疾病": "微小血管出血"
+``` 
+</details>
+
+#### 4.2 Relation Extraction
+**Task Introduction**
+
+Biomedical relationship extraction aims to automatically extract relationships or associations between biomedical entities from text, such as interactions between proteins and genes, therapeutic relationships between drugs and diseases, and more.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
+
+**User input：** 
+``` 
+请从下面的文本中提取医疗实体：
+
+主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+``` 
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -191,20 +267,42 @@
      "疾病": "微小血管出血"
 ``` 
 
-#### 4.2 关系抽取
-**任务介绍**
+**Example in English**
 
-生物医学关系抽取旨在从文本中自动提取出不同生物医学实体之间的关系或关联，例如蛋白质与基因之间的相互作用、药物与疾病之间的治疗关系等。
-
-**中文实例展示**
-
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
+``` 
+     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
+     
+     "临床表现": "脑实质和脑膜水肿、充血" 
+     
+     "疾病": "微小血管出血"
+``` 
+</details>
+
+
+#### 4.3 Event Extraction
+**Task Introduction**
+
+The goal of biomedical event extraction is to extract structured biomedical events from unstructured and vast biomedical literature, mining the described biological entities in the literature, as well as the fine-grained relationships between biomedical events. This task can save time in manually reviewing literature and provide support for the construction of relevant databases, disease diagnosis, prevention research, and more.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
+
+**User input：** 
+``` 
+请从下面的文本中提取医疗实体：
+
+主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+``` 
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -213,15 +311,43 @@
      "疾病": "微小血管出血"
 ``` 
 
-**英文实例展示**
+**Example in English**
 
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
+``` 
+     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
+     
+     "临床表现": "脑实质和脑膜水肿、充血" 
+     
+     "疾病": "微小血管出血"
+``` 
+</details>
+
+
+### 5. Machine Translation
+
+**Task Introduction**
+
+Machine translation can convert biomedical texts from one natural language to another. This task can assist in translating various medical questions and recommendations, disease names, symptoms, and other information between English and Chinese, for example.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Chinese to English Translation Example**
+
+**User input：** 
+``` 
+请从下面的文本中提取医疗实体：
+
+主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+``` 
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -230,20 +356,43 @@
      "疾病": "微小血管出血"
 ``` 
 
-#### 4.3 事件抽取
-**任务介绍**
+**English to Chinese Translation Example**
 
-生物医学事件抽取任务的目标是从非结构化的海量生物医学文献中抽取结构化的生物医学事件，挖掘文献中所描述的生物实体，以及生物医学事件之间的细粒度关系。这项任务可以节约人工查阅文献的时间，为相关数据库的构建、疾病的诊断和预防等研究提供支持。
-
-**中文实例展示**
-
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
+``` 
+     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
+     
+     "临床表现": "脑实质和脑膜水肿、充血" 
+     
+     "疾病": "微小血管出血"
+``` 
+</details>
+
+
+### 6. Title Generation
+
+**Task Introduction**
+
+Title generation aims to generate informative article titles for input biomedical text paragraphs with summarization.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
+
+**User input：** 
+``` 
+请从下面的文本中提取医疗实体：
+
+主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+``` 
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -252,15 +401,42 @@
      "疾病": "微小血管出血"
 ``` 
 
-**英文实例展示**
+**Example in English**
 
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
+``` 
+     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
+     
+     "临床表现": "脑实质和脑膜水肿、充血" 
+     
+     "疾病": "微小血管出血"
+``` 
+</details>
+
+### 7. Text Classification
+
+**Task Introduction**
+
+Biomedical text classification aims to automatically categorize biomedical texts into predefined class labels, aiding healthcare professionals, researchers, and institutions in better managing and analyzing medical information.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
+
+**User input：** 
+``` 
+请从下面的文本中提取医疗实体：
+
+主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+``` 
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -269,21 +445,41 @@
      "疾病": "微小血管出血"
 ``` 
 
-### 5. 机器翻译
+**Example in English**
 
-**任务介绍**
-
-机器翻译可将生物医学文本从一种自然语言转换成另一种自然语言。该任务可以帮助人们将各种医疗问题与建议、疾病名称与症状等信息进行中英文互译。
-
-**中译英实例展示**
-
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
+``` 
+     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
+     
+     "临床表现": "脑实质和脑膜水肿、充血" 
+     
+     "疾病": "微小血管出血"
+``` 
+</details>
+
+### 8. Text Semantic Similarity
+**Task Introduction**
+
+Text Semantic Similarity aims to determine the degree of association or similarity between two medical texts. This task typically involves text matching, similarity measurement, and semantic understanding and can be used in various applications such as medical information retrieval and document matching.
+
+<details>
+  <summary><b>Examples</b></summary>
+
+**Example in Chinese**
+
+**User input：** 
+``` 
+请从下面的文本中提取医疗实体：
+
+主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+``` 
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -292,15 +488,15 @@
      "疾病": "微小血管出血"
 ``` 
 
-**英译中实例展示**
+**Example in English**
 
-**用户输入：** 
+**User input：** 
 ``` 
 请从下面的文本中提取医疗实体：
 
 主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
 ``` 
-**太一输出：**
+**Taiyi output：**
 ``` 
      "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
      
@@ -308,215 +504,98 @@
      
      "疾病": "微小血管出血"
 ``` 
+</details>
 
-### 6. 标题生成
+## Training Data
 
-**任务介绍**
-
-标题生成旨在对输入的生物医学文本段落，生成对具有概括性的文章标题。
-
-**中文实例展示**
-
-**用户输入：** 
-``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
-``` 
-**太一输出：**
-``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
-``` 
-
-**英文实例展示**
-
-**用户输入：** 
-``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
-``` 
-**太一输出：**
-``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
-``` 
-
-
-### 7. 文本分类
-**中文实例展示**
-
-**用户输入：** 
-``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
-``` 
-**太一输出：**
-``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
-``` 
-
-**英文实例展示**
-
-**用户输入：** 
-``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
-``` 
-**太一输出：**
-``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
-``` 
-
-### 8. 文本相关性判断
-**任务介绍**
-
-文本相关性判断旨在确定两段医疗文本之间的关联程度或相似性。这种任务通常涉及文本匹配、相似性度量和语义理解，可用于各种应用，如医疗信息检索、文档匹配。
-
-**中文实例展示**
-
-**用户输入：** 
-``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
-``` 
-**太一输出：**
-``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
-``` 
-
-**英文实例展示**
-
-**用户输入：** 
-``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
-``` 
-**太一输出：**
-``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
-``` 
-
-
-## 训练数据
-
-### 数据收集
-为了充分利用现存生物医学自然语言处理数据集，本项目收集了现存开源总共170个中英双语数据集，其中中文数据集38个，覆盖10种BioNLP任务；英文数据集131个，覆盖12种BioNLP任务，数据集总览图如下图所示。
+### Data Collection
+To fully leverage existing biomedical natural language processing datasets, this project collected a total of 170 open-source datasets in both Chinese and English. Among these, there are 38 Chinese datasets covering 10 BioNLP tasks and 131 English datasets covering 12 BioNLP tasks. An overview of the datasets is provided in the following figure.
 
 <p align="center">
     <br>
-    <img src="./fig/data_overview.png?raw=true" width="800" height="426"/>
+    <img src="./fig/data_overview-2.png?raw=true" width="1096" height="400"/>
     <br>
 </p>
 
-并整理了每个数据集任务类型、数据规模、任务简介和数据相关链接。具体信息见[数据总表](./data_file/dataset_inf.md)。
+This project compiled information on each dataset, including task type, data scale, task description, and relevant data links. For specific details, please refer to the ["Overview of the Biomedical Datasets"](./data_file/dataset_inf.md).
 
-### 数据统一格式
-为了方便后续进行指令数据转换，本项目借鉴了[BigBio](https://github.com/bigscience-workshop/biomedical)项目,在其基础上根据任务类型设计制定了数据的统一格式，具体数据统一格式见[《DUTIR BioNLP数据统一格式》](./data_file/Task_schemas_zh.md)。然后将数据处理成制定的统一格式。
+### Standardized Data Format
+To facilitate subsequent data conversion, this project drew inspiration from the [BigBio](https://github.com/bigscience-workshop/biomedical) project and, based on the type of tasks, devised a unified data format. For specific details about this standardized data format, please refer to the ["DUTIR-BioNLP Data Schema Documentation"](./data_file/Task_schemas_en.md), and the data has been transformed to adhere to this standardized format.
 
-### 指令数据集
-根据数据集质量筛选和过滤后，在数据统一格式基础上，设计了指令模板并进行指令数据转换，最终指令数据简表统计如下表：
-
+### Instruction-Tuning Data
+After filtering and selecting datasets based on data quality, instructional templates were designed and data was transformed according to the standardized data format. The summary of the instruction-tuning data is presented in the following table:
 
 
 <table >
 <tr>
-  <th>任务类型</th>
-  <th>中文数据规模</th>
-  <th>英文数据规模</th>
+  <th>Task Type</th>
+  <th>Chinese Data Scale</th>
+  <th>English Data Scale</th>
 </tr>
 <tr>
-  <td>命名实体识别</td>
+  <td>Named Entity Recognition</td>
   <td>44,667</td>
   <td>28,603</td>
 </tr>
 <tr>
-  <td>关系抽取</td>
+  <td>Relation Extraction</td>
   <td>26,606</td>
   <td>17,279</td>
 </tr>
 <tr>
-  <td>事件抽取</td>
+  <td>Event Extraction</td>
   <td>2,992</td>
   <td>2,022</td>
 </tr>
 <tr>
-  <td>文本分类</td>
+  <td>Text Classification</td>
   <td>37,624</td>
   <td>40,339</td>
 </tr>
 <tr>
-  <td>文本对任务</td>
+  <td>Text Pair Task</td>
   <td>45,548</td>
   <td>11,237</td>
 </tr>
 <tr>
-  <td>机器翻译</td>
+  <td>Machine Translation</td>
   <td colspan ="2"; align="center">74,113</td>
 </tr>
 <tr>
-  <td>单轮问答</td>
+  <td>Single-turn Question and Answer</td>
   <td>129,562</td>
   <td>57,962</td>
 </tr>
 <tr>
-  <td>多轮对话</td>
+  <td>Multi-Round Dialogue</td>
   <td>16,391</td>
   <td>10,000</td>
 </tr>
 <tr>
-  <td>多轮对话</td>
+  <td>Multi-Round Dialogue</td>
   <td>16,391</td>
   <td>10,000</td>
 </tr>
 <tr>
-  <td>其他额外任务</td>
+  <td>Other Additional Tasks</td>
   <td colspan ="2"; align="center">9,370</td>
 </tr>
 <tr>
-  <td>通用思维链数据</td>
+  <td>General Chain-of-Thought Data</td>
   <td>50,000</td>
   <td>7,473</td>
 </tr>
 <tr>
-  <td>通用对话数据</td>
+  <td>General Dialogue Data</td>
   <td colspan ="2"; align="center">390,000</td>
 </tr>
 <tr>
-  <td>总计</td>
+  <td>Total</td>
   <td colspan ="2"; align="center">1,001,788</td>
 </tr>
 </table>
 
-
-训练指令数据详细信息请见[《指令数据表》](./data_file/final_instruction_data.md)。
+For detailed information on the instructional data used for training, please refer to the ["Instruction-Tuning Data Details"](./data_file/final_instruction_data.md).
 
 
 ## 模型训练
@@ -524,50 +603,66 @@
 ## 模型部署
 
 
-## 局限性与未来工作
+## Limitation and Future Work
 
-本项目的目标是探索大模型在生物医学领域的中英双语多种自然语言处理能力，然而，目前太一模型确实存在一些必须考虑的缺点：
-- 误解：与所有大语言模型一样，存在误解或错误解释的风险，尤其是在处理生物医学领域的专业术语或复杂概念时。在这种情况下，我们的模型可能提供不准确的答案或解释。
+**Limitations**
 
-- 幻觉：大语言模型有时会生成毫无意义或与给定输入完全无关的回应。这种“幻觉”可能在用户不熟悉讨论主题时尤为问题，因为他们可能无法轻易识别模型输出中的错误。
+The goal of this project is to explore the Chinese English bilingual natural language processing capabilities of the large model in the biomedical field. However, there are some shortcomings that must be considered in Taiyi model at present:
 
-- 信息有限性：尽管我们致力于成为生物医学领域的全面语言模型，但模型的知识仍然有限，可能无法覆盖每个领域或专业的所有方面。用户应该意识到模型的信息可能不全面，并在需要深入或专业知识时谨慎使用。
+- Misunderstanding: Like all major language models, there is a risk of misunderstanding or misinterpretation, especially when dealing with specialized terminology or complex concepts in the biomedical field. In this case, our model may provide inaccurate answers or explanations.
 
-- 偏见：模型的训练数据可能会包含偏见，这可能会在模型的回应中体现出来。我们努力减少偏见，但不能完全消除它。用户应该谨慎处理模型回应中的潜在偏见问题。
+- Hallucinations: Large language models sometimes generate meaningless or completely unrelated responses to a given input. This' hallucination 'may be particularly problematic when users are unfamiliar with the discussion topic, as they may not be able to easily identify errors in the model output.
 
-- 不提供医疗建议：我们强调，太一模型旨在提供信息和知识，但不应被用于替代医疗专业人员的建议或诊断。任何涉及个人健康的决策都应咨询专业医疗人员。
+- Limited Information: Despite our commitment to becoming a comprehensive language model in the biomedical field, the knowledge of the model is still limited and may not cover all aspects of each field or profession. Users should be aware that the information in the model may not be comprehensive and use it with caution when in-depth or professional knowledge is needed.
 
-未来我们会持续改进训练方法与训练数据，使太一模型的能力更加全面与强大。
+- Bias: The training data of the model may contain biases, which may be reflected in the model's response. We strive to reduce bias, but we cannot completely eliminate it. Users should handle potential bias issues in model responses with caution.
 
-## 开发团队
-太一由[大连理工大学信息检索研究室开发（DUTIR）](http://ir.dlut.edu.cn/)。 我们专注于互联网上内容的搜索、分析、理解和诠释，挖掘出潜在的、有价值的、新颖的知识模式，创造人机和谐的网络环境。我们的研究方向是信息检索、自然语言处理、推荐系统、社会计算、情感计算、面向生物医学领域的文本挖掘等。信息检索技术涉及到自然语言处理、机器学习、认知科学等诸多理论和技术等。
+Note: The Taiyi model is intended to provide information and knowledge, but should not be used as a substitute for medical professionals' advice or diagnosis. Any decision involving personal health should be consulted with professional medical personnel.
 
-指导老师：[罗凌](http://faculty.dlut.edu.cn/luoling/zh_CN/index.htm)、杨志豪、王健、孙媛媛、林鸿飞
+**Future Work**
 
-学生成员：宁金忠、赵颖闻、丁泽源、陈鹏、付伟茹、韩钦宇、徐广涛、邱云志、潘丁豪、李记如、汪志军、李浩、涂森博、凤文铎、刘宇奇
+- Open source data and technical manuscripts: Organize and improve data resources and model training technical manuscripts, and will be released as open source in the future.
+
+- Continuing pretraining: Due to current computing resource limitations, the current version of Taiyi mainly performs instruction data fine-tuning and does not use massive biomedical resources to continue pretraining. In the future, this project will explore the use of large model bases in the biomedical field resources to futher pretraining.
+
+- Reinforcement learning enhances performance: This project will explore how to further enhance the performance of models and align human intentions using reinforcement learning methods.
+
+- Enhanced interpretability: Compared to the general field, the biomedical field requires higher interpretability of model prediction results. In the future, we will explore the interpretability methods of Taiyi on various BioNLP tasks.
+
+- Enhanced security: Although security data has been added for training in this project, model security in the biomedical field is still insufficient. We will continue to explore how to use biomedical knowledge bases to enhance model security.
+  
+- ......
+
+## Development Team
+Taiyi was developed by the [Dalian University of Technology Information Retrieval Research Laboratory（DUTIR）](http://ir.dlut.edu.cn/) 
+
+Supervisors: [Ling Luo](http://faculty.dlut.edu.cn/luoling/en/index.htm), Zhihao Yang, Jian Wang, Yuanyuan Sun, Hongfei Lin
+
+Student Members: Jinzhong Ning, Yingwen Zhao, Zeyuan Ding, Peng Chen, Weiru Fu, Qinyu Han, Guangtao Xu, Yunzhi Qiu, Dinghao Pan, Jiru Li, Zhijun Wang, Hao Li, Wenduo Feng, Senbo Tu, Yuqi Liu
 
 
-## 致谢
-本项目的工作受到以下开源项目与技术的启发，包括但不限于：
-- Baichuan-7B: https://huggingface.co/baichuan-inc/baichuan-7B
-- LLaMA: https://arxiv.org/abs/2302.13971
-- Self-instruct: https://github.com/yizhongw/self-instruct
+## Acknowledgements
+The work of this project has been inspired and assisted by the following open-source projects and technologies. We would like to express our gratitude to the developers and contributors of these projects, including but not limited to:
 - Qwen: https://github.com/QwenLM/Qwen
+- BigBIO: https://github.com/bigscience-workshop/biomedical
+- The Taiyi logo was synthesized by ERNIE Bot
 
-## 免责声明
-- 在您开始使用太一大模型提供的服务时，请您确保您所输入的内容未侵害他人权益，未涉及不良信息，同时未输入与政治、暴力、色情相关的内容，且所有输入内容均合法合规。
-- 您确认并知悉使用太一大模型生成的所有内容均由人工智能模型生成，生成内容具有不完全理性，大连理工大学信息检索研究室（DUTIR）对其生成内容的准确性、完整性和功能性不做任何保证，亦不承担任何法律责任。大连理工大学信息检索研究室会尽可能为您提供准确且优质稳定的技术服务，但由人工智能模型生成的内容均不代表大连理工大学信息检索研究室的态度、观点或立场。
-- 大连理工大学信息检索研究室提供的太一大模型服务在法律法规允许的范围内进行数据训练，内容包括但不限于公开互联网的信息积累，且所有内容均已在不断的进行自动及人工敏感数据库过滤来确保内容理解和生成的准确性，但仍不排除其中有部分信息存在一定的敏感性、非合理性或导致理解歧义的问题存在，如您将生成的敏感性内容或非理性及有理解歧义的内容进行公开传播，由此造成的侵权、纠纷、损失将由您自行承担，大连理工大学信息检索研究室对此概不负责，亦不承担任何法律责任，如引发法律追责，您将负全部主要责任。
-- 太一大模型会根据您输入的内容进行生成，如生成内容引起您的质疑或引发不适，欢迎您随时通过官方邮箱（待补充）立即向大连理工大学信息检索研究室进行反馈，我们将对您的意见进行高度重视并采取及时有效的处理措施，同时对您表示十分感谢，但您对有质疑或引发不适的生成内容进行恶意传播并产生负面影响时，大连理工大学信息检索研究室无须承担任何法律责任。
-- 您充分知晓并保证您在使用太一大模型服务时输入的内容，以及生成的内容均享有合法的使用权，若在发布或使用时发生权利纠纷或侵犯了任何第三方的合法权益，由您承担全部的法律责任。
-- 您确保在阅读本服务协议时已详尽知晓并理解本服务协议的全部内容，在使用时须严格按照相关说明进行服务调用及输入，若您在使用过程中违反相关规范并被检测到，将会立即暂停您的服务使用权限，由此带来的相关后果将由您自行承担，大连理工大学信息检索研究室无须承担任何法律责任及赔偿责任。
-- 大连理工大学信息检索研究室尊重并保护所有使用太一大模型服务的用户个人隐私权，但需在此提醒您：请您确认使用太一大模型服务时输入的内容将不包含您本人及他人的个人信息，且您的输入内容将不被认为是您的个人隐私资料。
-- 由于系统发生故障导致影响太一大模型服务平台的正常运行，大连理工大学信息检索研究室承诺及时处理并进行修复，但用户因此而产生的纠纷和损失，大连理工大学信息检索研究室概不负责，亦不承担任何法律责任。
-- 在任何情况下，大连理工大学信息检索研究室均不会因太一大模型相关服务所发生的任何直接性、间接性、后果性、惩戒性、偶然性、特殊性的损害(包括但不限于：您使用太一大模型服务而遭受的利润损失)，承担任何责任(即使您已事先被告知该损害发生的可能性)。
-- 若您违反本协议中的任一条款，则大连理工大学信息检索研究室有权随时单方面终止服务的使用，且大连理工大学信息检索研究室无需承担任何责任。同时大连理工大学信息检索研究室有权根据实际遭受的损失向您请求赔偿。
+## Disclaimer
+The resources related to this project are for academic research purposes only and are strictly prohibited from commercial use. The use of the source code of this warehouse follows the open source license agreement [Apache 2.0](https://github.com/DUTIR-BioNLP/Taiyi-LLM/blob/main/LICENSE).
+During use, users are required to carefully read and comply with the following statements:
+1. Please ensure that the content you input does not infringe on the rights and interests of others, does not involve harmful information, and does not contain any content related to politics, violence, or pornography, and all input content is legal and compliant.
+2. Please confirm and be aware that all content generated using the Taiyi model is generated by artificial intelligence models, and the generated content is not entirely rational. This project does not guarantee the accuracy, completeness, and functionality of the generated content, nor assumes any legal responsibility.
+3. Any responses that violate laws, regulations, public order, or good customs in this model do not represent the attitude, viewpoint, or stance of this project. This project will continuously improve the model responses to make them more in line with social ethics and moral norms.
+4. For any content output by the model, the user shall bear their own risks and responsibilities. This project does not assume any legal responsibility, nor shall they be liable for any losses that may arise from the use of relevant resources and output results.
+5. The third-party links or libraries appearing in this project are for convenience only, and their content and viewpoints are not related to this project. Users need to distinguish themselves when using, and this project does not assume any joint liability;
+6. If users discover any significant errors in the project, please provide feedback to us to help us fix them in a timely manner.
 
-## 引用
-如果你使用到了本项目的仓库，请引用本项目。
+
+By using this project, you have carefully read, understood, and agreed to abide by the above disclaimer. This project reserves the right to modify this statement without prior notice to anyone.
+
+
+## Citation
+If you use the repository of this project, please cite it.
 ```
 @misc{taiyi,
     author = {Taiyi-Team}.
