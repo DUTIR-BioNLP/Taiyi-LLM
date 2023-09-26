@@ -1,7 +1,14 @@
-# 生物医学数据集汇总
-下面是收集的37个中文生物医疗数据集信息。
-| 序号      | 数据集      | 任务            | 规模             | 相关链接             | 任务说明                                                   |
-| :--------------: | :--------------: | :--------------: | -------------- | -------------- | ---------------------------------------------------------- |
+# Overview of the Biomedical Datasets
+
+- [Overview of the Biomedical Datasets](#overview-of-the-biomedical-datasets)
+  - [Chinese Datasets](#chinese-datasets)
+  - [English Datasets](#english-datasets)
+
+
+## Chinese Datasets
+
+| Num      | Dataset      | Task            | Size           | URL            | Task Description                                                   |
+| :--------------: | :--------------: | :--------------: | :--------------: | :--------------: | ---------------------------------------------------------- |
 | 1| CMedCausal  | CRE      | Train:800; Dev:200| [[Dataset](https://tianchi.aliyun.com/dataset/129573)][[paper](https://www.biomedrxiv.org.cn/article/pdf/display/bmr.202211.00004)]| 本次任务主要目标是从大量的医疗的问答和知识类的文本中可以挖掘抽取医疗因果关系构建因果关系解释网络，具体来说，细分的医学概念片段分为如下3种类型：1、因果关系：因果关系是指某种原因直接导致某种结果。2、条件关系：条件关系是指医学概念片段中一些特定的条件，用于修饰特定的因果关系，注意：条件并不能直接导致某个结果的发生。3、上下位关系：上下位关系指的是概念之间的大小关系。其中条件关系存在头实体为实体，尾实体为关系的情况。关系具有方向性。       |
 | 2| CHIP-CDEE       | EE       | Train:1,587; Dev:384| [[Dataset](https://tianchi.aliyun.com/dataset/95414)][[paper](https://tianchi.aliyun.com/dataset/95414)]| 有的事件属性不是实体。本次任务主要目标是从中文电子病历中挖掘出临床发现事件。即给定一段现病史或者医学影像所见报告，要求从中抽取临床发现事件的四个属性: 解剖部位、主体词、描述词，以及发生状态。       |
 | 3| MedDialog-zh        | MRD      | Train:2,725,989,; Dev:340,748; Test:340,754| [[Dataset](https://github.com/UCSD-AI4H/Medical-Dialogue-System)][[paper](https://arxiv.org/abs/2004.03329)]| 原始的中文对话来自于haodf.com. 英文对话来自于 healthcaremagic.com and icliniq.com。       |
@@ -41,10 +48,10 @@
 | 37| Text2DT       | TT-ts       | Train:300; Dev:100| [[Dataset](https://tianchi.aliyun.com/dataset/95414)][[paper](https://www.biomedrxiv.org.cn/article/pdf/display/bmr.202211.00002)]| 本次任务的目标是从给定的医疗文本抽取出诊疗决策树。诊疗决策树表示简化的决策过程，即根据条件判断的不同结果做出下一个条件判断或决策。一旦做出决策，诊疗过程终止。因此，Text2DT将诊疗决策树定义为由条件节点和决策节点组成的二叉树。本任务既要求模型能够将文本中的核心实体和关系挖掘出来，也需要将这些信息进行串联，形成一个完整的决策流程。       |
 
 
+## English Datasets
 
-下面是收集的103个英文生物医疗数据集信息。
-| 序号      | 数据集      | 任务            | 规模             | 相关链接             | 任务说明                                                   |
-| :--------------: | :--------------: | :--------------: | -------------- | -------------- | ---------------------------------------------------------- |
+| Num      | Dataset      | Task            | Size           | URL            | Task Description                                                   |
+| :--------------: | :--------------: | :--------------: | :--------------: | :--------------: | ---------------------------------------------------------- |
 | 1 | paramed       | MT       | Train:62,127; Dev:2,036; Test:2,102| [[Dataset](https://github.com/boxiangliu/ParaMed)][[paper](https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-021-01621-8)]| NEJM is a Chinese-English parallel corpus crawled from the New England Journal of Medicine website. English articles are distributed through https://www.nejm.org/ and Chinese articles are distributed through http://nejmqianyan.cn/. The corpus contains all article pairs (around 2000 pairs) since 2011.      |
 | 2 | medal       | NER       | Train:300,000; Dev:100,000; Test:100,000| [[Dataset](https://huggingface.co/datasets/bigbio/medal)][[paper](https://www.aclweb.org/anthology/2020.clinicalnlp-1.15)]| The Repository for Medical Dataset for Abbreviation Disambiguation for Natural Language Understanding (MeDAL) is a large medical text dataset curated for abbreviation disambiguation, designed for natural language understanding pre-training in the medical domain.       |
 | 3 | anat_em        | NER       | Train:606; Dev:202; Test:404| [[Dataset](http://nactem.ac.uk/anatomytagger/#AnatEM)][[paper](https://doi.org/10.1093/bioinformatics/btt580)]| Anatomical entity mention recognition: the recognition of mentions of anatomical entities, organism parts at levels of organization between the molecular and the whole organism.      |

@@ -1,8 +1,8 @@
-# DUTIR BioNLP Schema Documentation
+# DUTIR-BioNLP Data Schema Documentation
 Based on [BigBio project](https://github.com/bigscience-workshop/biomedical), we have defined a set of lightweight, task-specific schema to help simplify programmatic access to common biomedical datasets. This schema should be implemented for each dataset in addition to a schema that preserves the original dataset format.
 
 ## Content
-- [DUTIR BioNLP Schema Documentation](#dutir-bionlp-schema-documentation)
+- [DUTIR-BioNLP Data Schema Documentation](#dutir-bionlp-data-schema-documentation)
   - [Content](#content)
   - [Information Extraction (IE)](#information-extraction-ie)
     - [Passages](#passages)
