@@ -574,7 +574,7 @@
 
 本项目在6张Nvidia A40 48 GB显卡上使用Qlora进行指令微调测试。训练代码在 [Firefly](https://github.com/yangjianxin1/Firefly) 项目的基础上进行了修改。其中的主要超参数设置如下：
 
-```json
+```
 num_train_epochs:3
 per_device_train_batch_size:12
 gradient_accumulation_steps:2
