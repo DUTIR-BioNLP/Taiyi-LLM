@@ -566,8 +566,126 @@
 
 ## 模型训练
 
+**基座介绍**
+
+当前版本的太一是基于[Qwen-7B-base](https://huggingface.co/Qwen/Qwen-7B)通过指令微调得到。通义千问-7B（Qwen-7B）是阿里云研发的通义千问大模型系列的70亿参数规模的模型，在超过2万亿tokens数据进行预训练，包含高质量中、英、多语言、代码、数学等数据，涵盖通用及专业领域的训练语料。
+
+**训练细节**
+
+本项目在6张Nvidia A40 48 GB显卡上使用Qlora进行指令微调测试。训练代码在 [Firefly](https://github.com/yangjianxin1/Firefly) 项目的基础上进行了修改。其中的主要超参数设置如下：
+
+```json
+num_train_epochs:3
+per_device_train_batch_size:12
+gradient_accumulation_steps:2
+earning_rate:0.0002
+max_seq_length:1024
+lr_scheduler_type:"constant_with_warmup"
+warmup_ratio:0.1
+lora_rank:64
+lora_alpha:16
+lora_dropout:0.05
+weight_decay:0
+max_grad_norm:0.3
+```
+项目训练集包含约100w条训练样本，每个epoch的训练时间约为两天。
+
 ## 模型部署
 
+**环境搭建**
+
+本项目训练和测试使用的环境配置如下：
+```
+torch==1.13.0
+accelerate==0.21.0
+transformers==4.30.2
+peft==0.4.0
+bitsandbytes==0.39.0
+loguru==0.7.0
+numpy
+pandas==1.2.5
+tqdm==4.62.3
+deepspeed==0.9.5
+tensorboard
+sentencepiece
+transformers_stream_generator
+tiktoken
+einops
+scipy
+```
+可使用如下命令按照环境包：
+```
+$ pip install -r requirements.txt
+```
+**模型推理**
+
+本项目将多轮对话拼接成如下格式，然后进行tokenize。其中eod为qwen tokenizer中的特殊字符<|endoftext|>
+
+```
+<eod>input1<eod>answer1<eod>input2<eod>answer2<eod>.....
+```
+可使用如下代码完成使用我们的模型完成推理。
+```python
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_name = "DUTIR-BioNLP/Taiyi-LLM"
+
+device = 'cuda:0'
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    low_cpu_mem_usage=True,
+    torch_dtype=torch.float16,
+    trust_remote_code=True,
+    device_map = device
+)
+
+model.eval()
+tokenizer = AutoTokenizer.from_pretrained(
+    model_name,
+    trust_remote_code=True
+)
+
+import logging
+logging.disable(logging.WARNING)
+tokenizer.pad_token_id = tokenizer.eod_id
+tokenizer.bos_token_id = tokenizer.eod_id
+tokenizer.eos_token_id = tokenizer.eod_id
+history_token_ids = torch.tensor([[]], dtype=torch.long)
+max_new_tokens = 500
+top_p = 0.9
+temperature = 0.3
+repetition_penalty = 1.0
+
+# 开始对话
+history_max_len = 1000 
+utterance_id = 0
+history_token_ids = None
+
+user_input = "你好，请问你是谁？"
+
+input_ids = tokenizer(user_input, return_tensors="pt", add_special_tokens=False).input_ids
+bos_token_id = torch.tensor([[tokenizer.bos_token_id]], dtype=torch.long)
+eos_token_id = torch.tensor([[tokenizer.eos_token_id]], dtype=torch.long)
+user_input_ids = torch.concat([bos_token_id,input_ids, eos_token_id], dim=1)
+
+model_input_ids = user_input_ids.to(device)
+with torch.no_grad():
+    outputs = model.generate(
+        input_ids=model_input_ids, max_new_tokens=max_new_tokens, do_sample=True, top_p=top_p,
+        temperature=temperature, repetition_penalty=repetition_penalty, eos_token_id=tokenizer.eos_token_id
+    )
+
+response = tokenizer.batch_decode(outputs)
+print(response[0])
+#<|endoftext|>你好，请问你是谁？<|endoftext|>您好，我是医疗语言大模型Taiyi。<|endoftext|>
+```
+
+本项目提供两个用于对话的测试代码。可使用```dialogue_one_trun.py```中的程序进行单轮问答对话测试，或者使用```dialogue_multi_trun.py```中的示例代码进行多轮对话问答测试。
+
+注：为了保证推理速度，建议使用4090显卡。
 
 ## 局限性与未来工作
 **局限性**
