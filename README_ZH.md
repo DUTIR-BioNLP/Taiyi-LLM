@@ -475,7 +475,7 @@ similar
 
 <p align="center">
     <br>
-    <img src="./fig/data_overview-2.png?raw=true" width="1200" height="400"/>
+    <img src="./fig/data_overview.png?raw=true" width="1200" height="400"/>
     <br>
 </p>
 
