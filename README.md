@@ -7,12 +7,12 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/Qwen">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/qwen">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://modelscope.cn/studios/qwen/Qwen-14B-Chat-Demo/summary">Demo</a>&nbsp&nbsp | &nbsp&nbsp<a href="assets/wechat.png">WeChat (微信)</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/qwen">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://u230271-85ef-8af46a48.westb.seetacloud.com:8443/">Demo</a>&nbsp&nbsp | &nbsp&nbsp <a href="assets/wechat.png">WeChat (微信)</a>
 <br>
 <br>
 </p>
 
-# Taiyi (太一)：Bilingual Biomedical Large Language Model in Chinese and English
+# Taiyi (太一)：A Bilingual (Chinese and English) Biomedical Large Language Model Finetuned with Rich Biomedical Data
 
 **Project Background**
 
@@ -34,11 +34,11 @@ With the rapid development of deep learning technology, large language models li
 </p>
 
 ## Contents
-- [Taiyi (太一)：Bilingual Biomedical Large Language Model in Chinese and English](#taiyi-太一bilingual-biomedical-large-language-model-in-chinese-and-english)
+- [Taiyi (太一)：A Bilingual (Chinese and English) Biomedical Large Language Model Finetuned with Rich Biomedical Data](#taiyi-太一a-bilingual-chinese-and-english-biomedical-large-language-model-finetuned-with-rich-biomedical-data)
   - [Contents](#contents)
   - [Main Functions](#main-functions)
     - [1. Question Answering](#1-question-answering)
-    - [2. Doctor-Patient Dialogue](#2-doctor-patient-dialogue)
+    - [2. Biomedical Dialogue](#2-biomedical-dialogue)
     - [3. Medical Report Generation](#3-medical-report-generation)
     - [4. Biomedical Information Extraction](#4-biomedical-information-extraction)
       - [4.1 Named Entity Recognition](#41-named-entity-recognition)
@@ -52,8 +52,12 @@ With the rapid development of deep learning technology, large language models li
     - [Data Collection](#data-collection)
     - [Standardized Data Format](#standardized-data-format)
     - [Instruction-Tuning Data](#instruction-tuning-data)
-  - [模型训练](#模型训练)
-  - [模型部署](#模型部署)
+  - [Model Training](#model-training)
+    - [Introduction to the Base Model](#introduction-to-the-base-model)
+    - [Training Details](#training-details)
+  - [Model Usage](#model-usage)
+    - [Environment Setup](#environment-setup)
+    - [Model Inference](#model-inference)
   - [Limitation and Future Work](#limitation-and-future-work)
   - [Development Team](#development-team)
   - [Acknowledgements](#acknowledgements)
@@ -74,22 +78,22 @@ Biomedical question answering is designed to assist users in obtaining answers a
 
 **Example in Chinese**
 
-**Input：** 我最近感到头晕和恶心，这可能是什么原因？
 
 ```
-头晕和恶心可以有多种原因，包括感冒、中耳炎、低血糖、贫血等。为了获得确切的答案，建议咨询医生进行详细检查。
+用户：最近肚子总是隐隐作痛，感觉胀胀的，吃下去的东西都没法吸收，胃疼的特别厉害，偶尔伴有恶心想吐的感觉，请问是什么回事？
+太一：您好，根据您的描述，您可能患有胃炎。胃炎是一种常见的胃部疾病，其症状包括胃部不适、胀气、恶心、呕吐等。建议您尽快就医，医生会根据您的症状进行检查，然后开出相应的药物治疗方案。同时，您也可以注意饮食，避免辛辣、油腻、刺激性食物，多吃易消化的食物，保持良好的饮食习惯和作息规律。如果症状加重或持续时间较长，建议及时就医。希望您早日康复。
 ```
 
 **Example in English**
 
-**Input：** 我最近感到头晕和恶心，这可能是什么原因？
 
 ```
-头晕和恶心可以有多种原因，包括感冒、中耳炎、低血糖、贫血等。为了获得确切的答案，建议咨询医生进行详细检查。
+User：Can Dexilant interfere with sleep?
+Taiyi：Dexilant (Dexlansoprazole) is a is a proton pump inhibitor that is used to treat gastroesophageal reflux disease (GERD) and other conditions. It is generally safe to take Dexilant before bedtime, but it may cause some people to have trouble sleeping. If you experience difficulty sleeping after taking Dexilant, you should talk to your doctor. They may suggest taking the Dexilant at a different time of day or switching to a different medication.
 ```
 </details>
 
-### 2. Doctor-Patient Dialogue
+### 2. Biomedical Dialogue
 **Task Introduction**
 
 The Taiyi model is capable of simulating natural language conversations between doctors and patients. These conversations can encompass various biomedical topics, including medical inquiries, disease prevention, medication consultations, and more.
@@ -100,19 +104,27 @@ The Taiyi model is capable of simulating natural language conversations between 
 **Example in Chinese**
 
 ```
-用户：我最近感到头痛和喉咙痛。
-太一：我很抱歉听到您不舒服。可以告诉我头痛和喉咙痛的症状持续多久了吗？
-用户：我最近感到头痛和喉咙痛。
-太一：我很抱歉听到您不舒服。可以告诉我头痛和喉咙痛的症状持续多久了吗？
+用户：什么是鼠疫？
+太一：鼠疫是由鼠疫杆菌引起的传染病，鼠疫杆菌是一种细菌，通常通过跳蚤叮咬传播。鼠疫杆菌主要存在于啮齿类动物的，如老鼠、土拨鼠等，当这些动物被感染后，它们会通过跳蚤叮咬传播给其他动物，包括人类。鼠疫杆菌主要通过跳蚤叮咬传播，也可以通过直接接触感染。
+用户：它有什么预防方法吗？
+太一：
+预防鼠疫的方法包括以下几点：
+避免接触感染源：尽量避免接触啮齿类动物，如老鼠、土拨鼠等，特别是在疫区或疫区附近。
+保持个人卫生：勤洗手，保持身体清洁，避免接触感染源。
+食用安全食品：在疫区或疫区附近，尽量避免食用未经煮熟的肉类、蛋类等食品。
+做好防护措施：在疫区或疫区附近，佩戴口罩、手套等防护用品，避免直接接触感染源。
+接种疫苗：在疫区或疫区附近，可以接种鼠疫疫苗，增强免疫力，预防感染。
+用户：鼠疫常发生在哪些国家？
+太一：鼠疫是一种全球性传染病，主要分布在温带和寒带地区。目前，鼠疫主要分布在亚洲、非洲和欧洲等地区。其中，亚洲地区是鼠疫的主要流行区，包括中国、蒙古、俄罗斯、朝鲜、韩国、日本等国家。非洲地区是鼠疫的高发区，包括非洲中部、南部、东部等地区。欧洲地区是鼠疫的高发区，包括欧洲中部、北部、东部等地区。
 ```
 
 **Example in English**
 
 ```
-用户：我最近感到头痛和喉咙痛。
-太一：我很抱歉听到您不舒服。可以告诉我头痛和喉咙痛的症状持续多久了吗？
-用户：我最近感到头痛和喉咙痛。
-太一：我很抱歉听到您不舒服。可以告诉我头痛和喉咙痛的症状持续多久了吗？
+User：Do you know colchicine?
+Taiyi：Colchicine is a medication used to treat gout, a type of arthritis that causes joint pain, swelling, and redness. It works by reducing the amount of uric acid in the body.
+User：Does it have any potential side effects?
+Taiyi：Yes, Colchicine can have potential side effects. Some of the common side effects of Colchicine include nausea, vomiting, diarrhea, abdominal pain, and loss of appetite. However, there are also some rare but serious side effects of Colchicine, such as muscle weakness, confusion, and difficulty breathing. If you experience any of these side effects, you should seek medical attention immediately.
 ```
 </details>
 
@@ -128,37 +140,47 @@ Medical report auto-generation aims to summarize information during the diagnost
 
 **User inputs：** 
 ```
-根据对话，生成医疗报告：
-
-患者：你好，医生。我最近总是感觉头疼，尤其是在用电脑工作后。
-
-医生：你好，我很抱歉听到你不舒服。头疼的感觉是怎样的？是持续性的还是阵发性的？
-
-患者：它更像是阵发性的，特别是在我长时间盯着电脑屏幕后。
-
-医生：我明白了。你在工作或者休息的时候有没有定期休息和做眼保健操？
-
-患者：我试过，但并没有太大的帮助。
-
-医生：我明白了。这可能是由于用眼过度导致的，建议你尝试调整一下工作习惯，比如每隔一小时休息一下，远眺一下远处的风景。如果症状持续不减或者加重，建议你去医院进行进一步的检查。
-
-患者：好的，谢谢你，医生。
+问诊对话历史：
+患者：小孩受凉了，流清鼻涕，咳嗽，应该是风寒咳嗽，去药店买哪种药好呢
+医生：你好，宝宝咳嗽，流涕比较常见，西医角度上呼吸道感染可能性大，中医上叫做风寒咳嗽，请问宝宝除了咳嗽有没有其他不适症状呢？例如发热等，请详细描述一下，我好帮你诊治分析病情
+患者：精神状态好，也没有发热，就是喉咙有一点痛，咳嗽
+医生：先帮你分析一下病情，宝宝受凉之后免疫力降低，就会被细菌或病毒侵袭体内，气道分泌物增多，支气管平滑肌痉挛，咳嗽，咳痰，咽通。
+医生：目前没有发热，宝宝病情不重，不用过分紧张的。
+医生：我帮推荐治疗方法
+医生：宝宝目前多大了？有没有再医院看过？做过化验检查
+患者：嗯
+患者：7岁，没去医院，做过很多检查，平常就是爱咳嗽，喉哝发炎
+患者：医生说，扁桃体偏大
+医生：近期这次有没有去医院看过？做过检查
+医生：如果宝宝没有其他不适？可以口服氨溴索，桔贝合剂效果好
+医生：另外如果条件允许，可以做做雾化吸入治疗直接作用与支气管粘膜，效果更直接
+患者：不用做雾化吧，吃点药就行了
+医生：也可以先吃药
+患者：近期没有去过
+医生：你们这次没有去医院看过？
+患者：要吃消炎的吗
+患者：没
+患者：要吃消炎药吗
+医生：你好，可以先不吃的
+患者：那家里有蒲地蓝，可以吃吗
+患者：口服液
+患者：喉哝痛要吃吗
+医生：先治疗看看，可以吃的，假如宝宝出现发热或咳嗽加重，医院就诊，复查血常规和胸片，那个时候再考虑加抗生素
+患者：另外买个止咳的，行吗
+医生：我们的观点是宝宝小，尽量少吃消炎药，可以先吃那几个药三天看看效果
+患者：嗯谢谢
+根据上述对话，给出诊疗报告
+说明：诊疗报告分为主诉, 现病史, 辅助检查, 既往史, 诊断, 建议这六个章节。
 ```
 **Taiyi outputs：**  
 ```   
-患者姓名：未知
-日期：未知
-主诉：
-     患者报告在使用电脑工作后经常感到头疼，症状呈阵发性，尤其在长时间盯着电脑屏幕后。
-     临床观察：
-     患者试过定期休息和做眼保健操，但并没有太大的帮助。
-     初步诊断：
-     可能是由于用眼过度导致的头疼。
-     建议：
-     1. 调整工作习惯，比如每隔一小时休息一下，远眺一下远处的风景。
-     2. 如果症状持续不减或者加重，建议去医院进行进一步的检查。
-
-     注意：这只是一个基本的报告，并不能代替真正的医疗咨询。如果你有任何健康问题，建议你寻求专业医生的帮助。
+上述问诊对话的诊疗报告如下：
+主诉：咳嗽、流涕。
+现病史：患儿无明显诱因下出现咳嗽、流涕，无恶心呕吐，无其他明显不适症状。精神状态一般，胃纳一般，余如常。
+辅助检查：暂无。
+既往史：既往体健。
+诊断：小儿咳嗽。
+建议：口服氨溴索、桔贝合剂，密观。
 ```    
 **Example in English**
 
@@ -211,34 +233,27 @@ Biomedical named entity recognition aims to identify predefined biomedical entit
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+从下面文本中识别出指定的实体类型：
+治疗以选用大环内酯类抗生素，沙眼衣原体肺炎也可用磺胺二甲基异唑，年长儿和成人用氟喹诺酮类效果也很好。
+实体类型：疾病，药物
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+上述文本中包含的疾病为：沙眼衣原体肺炎
+上述文本中包含的药物为：大环内酯类抗生素; 磺胺二甲基异唑; 氟喹诺酮类
 ``` 
 
 **Example in English**
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+Extract the gene and disease entities from the following text:
+Identification of a novel FBN1 gene mutation in a Chinese family with Marfan syndrome.
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+gene: FBN1
+disease: Marfan syndrome
 ``` 
 </details>
 
@@ -432,34 +447,25 @@ Biomedical text classification aims to automatically categorize biomedical texts
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+现有以下文本：
+治皮肤病费用大概多少？
+请将上述文本分类至指定类别中：医疗费用，后果表述，指标解读，病情诊断，就医建议，疾病描述，其他，治疗方案，病因分析，功效作用，注意事项
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+上述文本被分类为：医疗费用
 ``` 
 
 **Example in English**
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+Document triage: "Will my mask from sherwin williams paint store with filters protect me from corona virus along with paint fumes?"
+Labels: patient, doctor
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+Result: patient
 ``` 
 </details>
 
@@ -475,34 +481,26 @@ Text Semantic Similarity aims to determine the degree of association or similari
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+语句1：乙肝小二阳会转成小三阳吗？
+语句2：乙肝小三阳会不会转成肝硬化、肝癌？
+请从下面选项中评估这段文本的语义相似度：语义不相同，语义相同
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+语义不相同
 ``` 
 
 **Example in English**
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+1. How can someone's happiness level affect someone's health?
+2. Can staying happy improve my health? What specific steps should I take?
+Assess the semantic similarity of the text pairs based on the following labels: dissimilar, similar
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+similar
 ``` 
 </details>
 
@@ -513,7 +511,7 @@ To fully leverage existing biomedical natural language processing datasets, this
 
 <p align="center">
     <br>
-    <img src="./fig/data_overview-2.png?raw=true" width="1096" height="400"/>
+    <img src="./fig/data_overview-2.png?raw=true" width="1200" height="400"/>
     <br>
 </p>
 
@@ -598,9 +596,127 @@ After filtering and selecting datasets based on data quality, instructional temp
 For detailed information on the instructional data used for training, please refer to the ["Instruction-Tuning Data Details"](./data_file/final_instruction_data.md).
 
 
-## 模型训练
+## Model Training
+### Introduction to the Base Model
 
-## 模型部署
+The current version of Taiyi is based on the [Qwen-7B-base](https://huggingface.co/Qwen/Qwen-7B) model, which has been fine-tuned through Instruct-tuning. Qwen-7B is a 7 billion-parameter model in the Alibaba Cloud's Qwen large model series. It has been pre-trained on over 200 trillion tokens, encompassing high-quality data in Chinese, English, multiple languages, code, mathematics, and more. The training corpus covers both general and specialized domains.
+
+
+### Training Details
+
+We conducted instruction-guided fine-tuning using Qlora on 6 Nvidia A40 48 GB GPUs. Our training code was modified based on project [Firefly](https://github.com/yangjianxin1/Firefly). The key hyperparameters used in the training process are as follows:
+
+
+```json
+num_train_epochs:3
+per_device_train_batch_size:12
+gradient_accumulation_steps:2
+earning_rate:0.0002
+max_seq_length:1024
+lr_scheduler_type:"constant_with_warmup"
+warmup_ratio:0.1
+lora_rank:64
+lora_alpha:16
+lora_dropout:0.05
+weight_decay:0
+max_grad_norm:0.3
+```
+Our training dataset consists of approximately 1 million training samples. Each epoch of training takes approximately two days to complete. 
+## Model Usage
+
+### Environment Setup
+The environment configuration we used for training and testing is as follows:
+```
+torch==1.13.0
+accelerate==0.21.0
+transformers==4.30.2
+peft==0.4.0
+bitsandbytes==0.39.0
+loguru==0.7.0
+numpy
+pandas==1.2.5
+tqdm==4.62.3
+deepspeed==0.9.5
+tensorboard
+sentencepiece
+transformers_stream_generator
+tiktoken
+einops
+scipy
+```
+### Model Inference
+We concatenate multi-turn dialogues into the following format, and then tokenize them. Where eod is the special character <|endoftext|> in the qwen tokenizer.
+
+```
+<eod>input1<eod>answer1<eod>input2<eod>answer2<eod>.....
+```
+The following code can be used to perform inference using our model:
+```python
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_name = "DUTIR-BioNLP/Taiyi-LLM"
+
+device = 'cuda:0'
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    low_cpu_mem_usage=True,
+    torch_dtype=torch.float16,
+    trust_remote_code=True,
+    device_map = device
+)
+
+
+model.eval()
+tokenizer = AutoTokenizer.from_pretrained(
+    model_name,
+    trust_remote_code=True
+)
+
+import logging
+logging.disable(logging.WARNING)
+tokenizer.pad_token_id = tokenizer.eod_id
+tokenizer.bos_token_id = tokenizer.eod_id
+tokenizer.eos_token_id = tokenizer.eod_id
+history_token_ids = torch.tensor([[]], dtype=torch.long)
+max_new_tokens = 500
+top_p = 0.9
+temperature = 0.3
+repetition_penalty = 1.0
+
+# 开始对话
+history_max_len = 1000 
+utterance_id = 0
+history_token_ids = None
+
+user_input = "你好，请问你是谁？"
+
+input_ids = tokenizer(user_input, return_tensors="pt", add_special_tokens=False).input_ids
+bos_token_id = torch.tensor([[tokenizer.bos_token_id]], dtype=torch.long)
+eos_token_id = torch.tensor([[tokenizer.eos_token_id]], dtype=torch.long)
+user_input_ids = torch.concat([bos_token_id,input_ids, eos_token_id], dim=1)
+
+
+model_input_ids = user_input_ids.to(device)
+with torch.no_grad():
+    outputs = model.generate(
+        input_ids=model_input_ids, max_new_tokens=max_new_tokens, do_sample=True, top_p=top_p,
+        temperature=temperature, repetition_penalty=repetition_penalty, eos_token_id=tokenizer.eos_token_id
+    )
+
+response = tokenizer.batch_decode(outputs)
+print(response[0])
+#<|endoftext|>你好，请问你是谁？<|endoftext|>您好，我是医疗语言大模型Taiyi。<|endoftext|>
+```
+
+
+We provide two test codes for dialogue. You can use the code in ```dialogue_one_trun.py``` to test single-turn QA dialogue, or use the sample code in ```dialogue_multi_trun.py``` to test multi-turn conversational QA.
+
+
+Note: To ensure fast inference speed, we recommend using a 4090 GPU.
+
 
 
 ## Limitation and Future Work
@@ -616,6 +732,10 @@ The goal of this project is to explore the Chinese English bilingual natural lan
 - Limited Information: Despite our commitment to becoming a comprehensive language model in the biomedical field, the knowledge of the model is still limited and may not cover all aspects of each field or profession. Users should be aware that the information in the model may not be comprehensive and use it with caution when in-depth or professional knowledge is needed.
 
 - Bias: The training data of the model may contain biases, which may be reflected in the model's response. We strive to reduce bias, but we cannot completely eliminate it. Users should handle potential bias issues in model responses with caution.
+
+- Long multi-turn conversational ability: Due to the current computational constraints of our team, the max token length we could set during training was 1024. Therefore, our current model is most competitive in relatively short conversations (around 5 turns).
+
+- Topic switching ability: Due to current constraints on information and computational resources, our model may exhibit instability in multi-turn conversations covering multiple topics with large spans. Therefore, when conversing with Taiyi, users should try to maintain consistency in the dialogue topic.
 
 Note: The Taiyi model is intended to provide information and knowledge, but should not be used as a substitute for medical professionals' advice or diagnosis. Any decision involving personal health should be consulted with professional medical personnel.
 
@@ -644,6 +764,7 @@ Student Members: Jinzhong Ning, Yingwen Zhao, Zeyuan Ding, Peng Chen, Weiru Fu, 
 ## Acknowledgements
 The work of this project has been inspired and assisted by the following open-source projects and technologies. We would like to express our gratitude to the developers and contributors of these projects, including but not limited to:
 - Qwen: https://github.com/QwenLM/Qwen
+- Firefly: https://github.com/yangjianxin1/Firefly
 - BigBIO: https://github.com/bigscience-workshop/biomedical
 - The Taiyi logo was synthesized by ERNIE Bot
 
@@ -666,7 +787,7 @@ If you use the repository of this project, please cite it.
 ```
 @misc{taiyi,
     author = {Taiyi-Team}.
-    title = {Taiyi: A Biomedical Large Language Model Finetuned with Rich Bilingual Biomedical Data}
+    title = {Taiyi: A Bilingual Biomedical Large Language Model Finetuned with Rich Biomedical Data}
     year = {2023},
     publisher = {GitHub},
     journal = {GitHub repository}
