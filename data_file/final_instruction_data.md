@@ -1,6 +1,6 @@
-# 最终训练指令数据信息
+# Final Training Instruction Data
 
-| 数据集 | 任务 | 语种 | 最终选取量 |
+| Data | Task | Language | Final Num |
 | --- | --- | --- | --- |
 | chip_cdee | ADD | zh | 2992 |
 | imcs_v2_dac | ADD | zh | 5000 |
