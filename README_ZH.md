@@ -503,11 +503,6 @@ similar
   <td align="center">10,000</td>
 </tr>
 <tr>
-  <td>多轮对话</td>
-  <td align="center">16,391</td>
-  <td align="center">10,000</td>
-</tr>
-<tr>
   <td>其他额外任务</td>
   <td colspan ="2"; align="center">9,370</td>
 </tr>
