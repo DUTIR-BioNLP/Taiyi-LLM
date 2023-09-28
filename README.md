@@ -502,11 +502,6 @@ After filtering and selecting datasets based on data quality, instructional temp
   <td align="center">10,000</td>
 </tr>
 <tr>
-  <td>Multi-Round Dialogue</td>
-  <td align="center">16,391</td>
-  <td align="center">10,000</td>
-</tr>
-<tr>
   <td>Other Additional Tasks</td>
   <td colspan ="2"; align="center">9,370</td>
 </tr>
