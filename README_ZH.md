@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/qwen">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://modelscope.cn/studios/qwen/Qwen-14B-Chat-Demo/summary">Demo</a>&nbsp&nbsp | &nbsp&nbsp<a href="assets/wechat.png">WeChat (微信)</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://u230271-85ef-8af46a48.westb.seetacloud.com:8443/">Demo</a>&nbsp&nbsp | &nbsp&nbsp<a href="">WeChat (微信)</a>
 <br>
 <br>
 </p>
@@ -16,14 +16,16 @@
 
 **项目背景**
 
-随着深度学习技术的迅速发展，类ChatGPT这样的大型语言模型在自然语言处理领域已经取得了显著的进展。面向生物医学领域，大语言模型有助于医生与患者之间的沟通，提供有用的医学信息，并在辅助诊疗、生物医学知识发现、药物研发、个性化医疗方案等方面具有巨大潜力。然而，在AI社区中，已有的开源生物医学大模型相对较少，且大多主要专注于单语（中文或英语）的医学问答对话。因此，本项目展开了面向生物医学领域大模型的研究，并发布初版中英双语生物医学大模型——太一（Taiyi），旨在探索大模型在生物医学领域中多种中英双语自然语言处理任务上的处理能力。
+随着深度学习技术的迅速发展，类ChatGPT这样的大语言模型在自然语言处理领域已经取得了显著的进展。面向生物医学领域，大语言模型有助于医生与患者之间的沟通，提供有用的医学信息，并在辅助诊疗、生物医学知识发现、药物研发、个性化医疗方案等方面具有巨大潜力。然而，在人工智能社区中，已有的开源生物医学大模型相对较少，且大多主要专注于单语（中文或英语）的医疗问答对话。因此，本项目开展了面向生物医学领域大模型的研究，并发布初版中英双语生物医学大模型——太一（Taiyi），旨在探索大模型在生物医学领域中双语自然语言处理多任务的能力。
 
 
 **项目特色**
 
-- **丰富的生物医学训练资源**：面向生物医学领域，本项目收集整理了丰富的中英双语生物医学自然语言处理（BioNLP）训练语料，总共包含37个中文数据集，覆盖10种BioNLP任务；131个英文数据集，覆盖12种BioNLP任务。并根据任务类型，设计制定任务数据统一格式，对数据集进行统一格式转换。
-- **出色的中英双语BioNLP多任务能力**：设计并构建中英双语指令数据集（超过100W条样本），用于大模型指令微调，使模型具备出色的中英双语生物医学智能问答、医患对话、报告生成、信息抽取、机器翻译、标题生成、文本分类等多种BioNLP能力。
-- **开源信息**：开源中英双语BioNLP数据集整理信息、太一大模型权重、模型推理部署脚本。
+- **丰富的生物医学训练资源**：面向生物医学领域，本项目收集整理了丰富的中英双语生物医学自然语言处理（BioNLP）训练语料，总共包含38个中文数据集，覆盖10种BioNLP中文任务；102个英文数据集，覆盖12种BioNLP英文任务。本项目根据任务类型，设计制定任务数据统一格式，对数据集进行了统一格式转换。
+- **出色的中英双语BioNLP多任务能力**：通过丰富的中英双语任务指令数据（超过100W条样本）进行大模型指令微调，使模型具备了出色的中英双语生物医学智能问答、医患对话、报告生成、信息抽取、机器翻译、标题生成、文本分类等多种BioNLP能力。
+- **优秀的泛化能力**：除了生物医学领域，模型仍具备通用领域对话能力，并通过设计指令模板多样性，使模型具备了较优秀的指令理解能力，在同类任务的不同场景下具有较好的泛化能力，并激发了模型一定的零样本学习能力。
+
+为了促进生物医学领域NLP发展，本项目开源了中英双语BioNLP数据集整理信息、“太一”大模型权重、模型推理使用脚本。
 
 **整体框架图**
 
@@ -36,7 +38,7 @@
 ## 目录
 - [太一（Taiyi）：中英双语生物医学大模型](#太一taiyi中英双语生物医学大模型)
   - [目录](#目录)
-  - [模型主要功能](#模型主要功能)
+  - [主要功能展示](#主要功能展示)
     - [1. 智能问答](#1-智能问答)
     - [2. 医学对话](#2-医学对话)
     - [3. 医疗报告生成](#3-医疗报告生成)
@@ -67,16 +69,16 @@
 
 
 
-## 模型主要功能
+## 主要功能展示
 ### 1. 智能问答
 **任务介绍**
 
-生物医学智能问答旨在通过问答形式帮助用户获取有关生物医学领域的答案和信息。有助于更有效地管理生物医学信息，提高医疗决策的质量，提升生物医学教育的效果。
+生物医学智能问答旨在通过问答形式帮助用户获取有关生物医学领域的答案和信息。有助于更有效地管理生物医学信息，提高医疗决策的质量，辅助生物医学教育。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 
 ```
@@ -85,7 +87,7 @@
 ```
 
 
-**英文实例展示**
+**英文样例展示**
 
 
 ```
@@ -97,12 +99,12 @@
 ### 2. 医学对话
 **任务介绍**
 
-太一大模型可模拟医生与患者进行自然语言对话。这种对话可以涵盖病情咨询、疾病预防、药物咨询等各种生物医学主题。
+太一大模型可模拟生物医学专家与患者进行自然语言对话。这种对话可以涵盖病情咨询、疾病预防、药物咨询等多种生物医学主题。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 ```
 用户：什么是鼠疫？
@@ -119,7 +121,7 @@
 太一：鼠疫是一种全球性传染病，主要分布在温带和寒带地区。目前，鼠疫主要分布在亚洲、非洲和欧洲等地区。其中，亚洲地区是鼠疫的主要流行区，包括中国、蒙古、俄罗斯、朝鲜、韩国、日本等国家。非洲地区是鼠疫的高发区，包括非洲中部、南部、东部等地区。欧洲地区是鼠疫的高发区，包括欧洲中部、北部、东部等地区。
 ```
 
-**英文实例展示**
+**英文样例展示**
 
 ```
 用户：Do you know colchicine?
@@ -132,12 +134,12 @@
 ### 3. 医疗报告生成
 **任务介绍**
 
-医疗报告自动生成旨在对问诊过程中进行信息的总结，任务要求语言模型能够依据病人自述和医患对话， 生成具有规定格式的医疗报告。这项任务可以帮助医生更有效地处理大量的医疗信息，并为患者提供准确的诊断和治疗建议。
+医疗报告自动生成旨在对问诊过程中进行信息的总结，依据病人自述和医患对话， 生成具有规定格式的医疗报告。这项任务可以帮助医生更有效地处理大量的医疗信息，并为患者提供准确的诊断和治疗建议。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**实例展示**
+**样例展示**
 
 **用户输入：** 
 ```
@@ -192,9 +194,9 @@
 生物医学命名实体识别旨在从文本中识别出预定义的生物医学实体。这些实体可以包括疾病、药物、基因、蛋白质等生物医学概念。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 **用户输入：** 
 ``` 
@@ -208,7 +210,7 @@
 上述文本中包含的药物为：大环内酯类抗生素; 磺胺二甲基异唑; 氟喹诺酮类
 ``` 
 
-**英文实例展示**
+**英文样例展示**
 
 **用户输入：** 
 ``` 
@@ -225,12 +227,12 @@ disease: Marfan syndrome
 #### 4.2 关系抽取
 **任务介绍**
 
-生物医学关系抽取旨在从文本中自动提取出生物医学实体对之间的关系或关联，例如蛋白质与基因之间的相互作用、药物与疾病之间的治疗关系等。
+生物医学关系抽取旨在从文本中自动提取出生物医学实体对之间的预定义关系，例如蛋白质与基因之间的相互作用、药物与疾病之间的治疗关系等。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 **用户输入：** 
 ``` 
@@ -241,7 +243,7 @@ disease: Marfan syndrome
 具有药物治疗关系的实体对如下：[慢性阻塞性肺疾病, β2 受体激动剂]
 ``` 
 
-**英文实例展示**
+**英文样例展示**
 
 **用户输入：** 
 ``` 
@@ -263,9 +265,9 @@ MECHANISM: [Mitotane, warfarin]
 生物医学事件抽取任务的目标是从非结构化的海量生物医学文献中抽取结构化的生物医学事件，挖掘文献中所描述的生物实体，以及生物医学事件之间的细粒度关系。这项任务可以节约人工查阅文献的时间，为相关数据库的构建、疾病的诊断和预防等研究提供支持。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 **用户输入：** 
 ``` 
@@ -279,7 +281,7 @@ MECHANISM: [Mitotane, warfarin]
 主体词：疼痛；发生状态：；描述词：明显好转；解剖部位：腹
 ``` 
 
-**英文实例展示**
+**英文样例展示**
 
 **用户输入：** 
 ``` 
@@ -302,9 +304,9 @@ Cause of disease: (Trigger: responsible, Theme: diarrheal diseases, Cause: Conta
 机器翻译可将生物医学文本从一种自然语言转换成另一种自然语言。该任务可以帮助人们将各种医疗问题与建议、疾病名称与症状等信息进行中英文互译。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中译英实例展示**
+**中译英样例展示**
 
 **用户输入：** 
 ``` 
@@ -316,7 +318,7 @@ Cause of disease: (Trigger: responsible, Theme: diarrheal diseases, Cause: Conta
 As a new tumor treatment method, photodynamic therapy (pdt) has been widely used in clinical practice because of its advantages of few side effects, good targeting, and repeatability. Compared with traditional treatment strategies, such as surgery, chemotherapy, and radiotherapy, pdt can not only kill the primary tumor, but also inhibit the metastatic tumor by activating the body's immune effect. However, the induction of immune effect by pdt is affected by many factors, including the localization and dose of photosensitizers in cells, light parameters, oxygen concentration in tumor, and the integrity of immune function. In this review, we focus on themechanisms of antitumor immune effect mediated by pdt, and the main influencing factors of immune effect of pdt, to discuss the future development direction of pdt in thetumor treatment.
 ``` 
 
-**英译中实例展示**
+**英译中样例展示**
 
 **用户输入：** 
 ``` 
@@ -337,9 +339,9 @@ Metabolic-associated fatty liver disease (MAFLD), formerly known as non-alcoholi
 标题生成旨在对输入的生物医学文本段落，生成对具有概括性的文章标题。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 **用户输入：** 
 ``` 
@@ -351,7 +353,7 @@ Metabolic-associated fatty liver disease (MAFLD), formerly known as non-alcoholi
 气管食管瘘诊断与治疗进展
 ``` 
 
-**英文实例展示**
+**英文样例展示**
 
 **用户输入：** 
 ``` 
@@ -367,12 +369,13 @@ A novel approach for diagnosing diabetes using high-frequency ultrasound and a c
 ### 7. 文本分类
 
 **任务介绍**
+
 生物医学文本分类旨在将生物医学文本自动分类到预定义的类别标签中，以帮助医疗专业人员、研究人员和机构更好地管理和分析医疗信息。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 **用户输入：** 
 ``` 
@@ -385,7 +388,7 @@ A novel approach for diagnosing diabetes using high-frequency ultrasound and a c
 上述文本被分类为：医疗费用
 ``` 
 
-**英文实例展示**
+**英文样例展示**
 
 **用户输入：** 
 ``` 
@@ -404,9 +407,9 @@ Result: patient
 文本相关性判断旨在确定两段医疗文本之间的关联程度或相似性。这种任务通常涉及文本匹配、相似性度量和语义理解，可用于各种应用，如医疗信息检索、文档匹配。
 
 <details>
-  <summary><b>实例展示</b></summary>
+  <summary><b>样例展示</b></summary>
 
-**中文实例展示**
+**中文样例展示**
 
 **用户输入：** 
 ``` 
@@ -419,7 +422,7 @@ Result: patient
 语义不相同
 ``` 
 
-**英文实例展示**
+**英文样例展示**
 
 **用户输入：** 
 ``` 
@@ -436,7 +439,7 @@ similar
 ## 训练数据
 
 ### 数据收集
-为了充分利用现存生物医学自然语言处理数据集，本项目收集了现存开源总共170个中英双语数据集，其中中文数据集38个，覆盖10种BioNLP任务；英文数据集131个，覆盖12种BioNLP任务，数据集总览图如下图所示。
+为了充分利用现存生物医学自然语言处理数据集，本项目收集了现存开源现存140个中英双语数据集，其中中文数据集38个，覆盖10种BioNLP任务；英文数据集102个，覆盖12种BioNLP任务，数据集总览图如下图所示。
 
 <p align="center">
     <br>
@@ -447,10 +450,10 @@ similar
 本项目整理了每个数据集的任务类型、数据规模、任务简介和数据相关链接，具体信息见[《数据总表》](./data_file/dataset_inf.md)。
 
 ### 数据统一格式
-为了方便后续进行指令数据转换，本项目借鉴了[BigBio](https://github.com/bigscience-workshop/biomedical)项目,在其基础上根据任务类型设计制定了数据的统一格式，具体数据统一格式见[《DUTIR BioNLP数据统一格式》](./data_file/Task_schemas_zh.md)，并将数据处理成制定的统一格式。
+为了后续进行指令数据转换，本项目借鉴了[BigBio](https://github.com/bigscience-workshop/biomedical)项目,在其基础上根据任务类型设计制定了数据的统一格式，具体数据统一格式见[《DUTIR BioNLP数据统一格式》](./data_file/Task_schemas_zh.md)，并将数据处理成制定的统一格式。
 
 ### 指令数据集
-根据数据集质量筛选和过滤后，在数据统一格式基础上，设计了指令模板并进行指令数据转换，最终指令数据简表统计如下表：
+根据数据集质量筛选和过滤后，在数据统一格式基础上，借鉴[PromptCBLUE](https://github.com/michael-wzhu/PromptCBLUE)项目设计了多种指令模板并进行指令数据转换。此外，为了保留通用领域的对话能力和增强模型的推理能力，本项目还加入了通用领域的对话和思维链数据，最终用于大模型训练的指令数据简表统计如下表：
 
 
 
@@ -462,28 +465,28 @@ similar
 </tr>
 <tr>
   <td>命名实体识别</td>
-  <td>44,667</td>
-  <td>28,603</td>
+  <td align="center">44,667</td>
+  <td align="center">28,603</td>
 </tr>
 <tr>
   <td>关系抽取</td>
-  <td>26,606</td>
-  <td>17,279</td>
+  <td align="center">26,606</td>
+  <td align="center">17,279</td>
 </tr>
 <tr>
   <td>事件抽取</td>
-  <td>2,992</td>
-  <td>2,022</td>
+  <td align="center">2,992</td>
+  <td align="center">2,022</td>
 </tr>
 <tr>
   <td>文本分类</td>
-  <td>37,624</td>
-  <td>40,339</td>
+  <td align="center">37,624</td>
+  <td align="center">40,339</td>
 </tr>
 <tr>
   <td>文本对任务</td>
-  <td>45,548</td>
-  <td>11,237</td>
+  <td align="center">45,548</td>
+  <td align="center">11,237</td>
 </tr>
 <tr>
   <td>机器翻译</td>
@@ -491,18 +494,18 @@ similar
 </tr>
 <tr>
   <td>单轮问答</td>
-  <td>129,562</td>
-  <td>57,962</td>
+  <td align="center">129,562</td>
+  <td align="center">57,962</td>
 </tr>
 <tr>
   <td>多轮对话</td>
-  <td>16,391</td>
-  <td>10,000</td>
+  <td align="center">16,391</td>
+  <td align="center">10,000</td>
 </tr>
 <tr>
   <td>多轮对话</td>
-  <td>16,391</td>
-  <td>10,000</td>
+  <td align="center">16,391</td>
+  <td align="center">10,000</td>
 </tr>
 <tr>
   <td>其他额外任务</td>
@@ -510,8 +513,8 @@ similar
 </tr>
 <tr>
   <td>通用思维链数据</td>
-  <td>50,000</td>
-  <td>7,473</td>
+  <td align="center">50,000</td>
+  <td align="center">7,473</td>
 </tr>
 <tr>
   <td>通用对话数据</td>
@@ -653,24 +656,24 @@ print(response[0])
 ## 局限性与未来工作
 **局限性**
 
-本项目的目标是探索大模型在生物医学领域的中英双语多种自然语言处理能力，然而，目前太一模型确实存在一些必须考虑的缺点：
+本项目致力探索大模型在生物医学领域的中英双语自然语言处理多任务的能力，然而，“太一”大模型仍存在大模型的一些常见缺点：
 - 误解：与所有大语言模型一样，存在误解或错误解释的风险，尤其是在处理生物医学领域的专业术语或复杂概念时。在这种情况下，我们的模型可能提供不准确的答案或解释。
 
 - 幻觉：大语言模型有时会生成毫无意义或与给定输入完全无关的回应。这种“幻觉”可能在用户不熟悉讨论主题时尤为问题，因为他们可能无法轻易识别模型输出中的错误。
 
-- 信息有限性：尽管我们致力于成为生物医学领域的全面语言模型，但模型的知识仍然有限，可能无法覆盖每个领域或专业的所有方面。用户应该意识到模型的信息可能不全面，并在需要深入或专业知识时谨慎使用。
+- 信息有限性：尽管本项目致力于成为生物医学领域的全面语言模型，但模型的知识仍然有限，可能无法覆盖每个领域或专业的所有方面。用户应该意识到模型的信息可能不全面，并在需要深入或专业知识时谨慎使用。
 
 - 偏见：模型的训练数据可能会包含偏见，这可能会在模型的回应中体现出来。我们努力减少偏见，但不能完全消除它。用户应该谨慎处理模型回应中的潜在偏见问题。
 
-- 长多轮对话能力：受限于我们团队当前的算力条件，我们训练过程中的截止token长度仅能设置为1024。因此，当前我们的模型只在较短轮数（约5轮左右）的对话场景下具有较强竞争力。
+- 多轮长对话能力不稳定：受限于我们团队当前的算力条件，我们训练过程中的截止token长度仅能设置为1024。因此，当前我们的模型只在较短轮数（约5轮左右）的对话场景下具有较强竞争力。
 
-- 话题急转能力：受限于当前信息和算力资源，我们的模型可能在包含多个跨度较大主题的多轮对话中表现出不稳定性。
+- 话题转换能力弱：受限于当前信息和算力资源，我们的模型可能在包含多个跨度较大主题的多轮对话中表现出不稳定性。
 
 注意：太一模型旨在提供信息和知识，但不应被用于替代医疗专业人员的建议或诊断。任何涉及个人健康的决策都应咨询专业医疗人员。
 
 **未来工作**
 
-- 开源数据和技术手稿：整理完善数据资源和模型训练技术手稿，后续将开源发布。
+- 开源数据和技术手稿：整理完善数据资源和模型训练技术手稿，也将这些资源陆续发布。
   
 - 继续预训练：由于目前计算资源限制，当前的太一版本主要进行了指令数据微调，并未采用海量生物医学资源继续预训练，未来本项目将探索大模型基座在生物医学领域资源上继续预训练。
   
@@ -695,6 +698,7 @@ print(response[0])
 - Qwen: https://github.com/QwenLM/Qwen
 - Firefly: https://github.com/yangjianxin1/Firefly
 - BigBIO: https://github.com/bigscience-workshop/biomedical
+- PromptCBLUE: https://github.com/michael-wzhu/PromptCBLUE
 - 太一logo 由文言一心AI合成
 
 ## 免责声明
@@ -724,7 +728,7 @@ print(response[0])
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=DUTIR-BioNLP/Task_schemas&type=Date)](https://star-history.com/#DUTIR-BioNLP/Task_schemas&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=DUTIR-BioNLP/Taiyi-LLM&type=Date)](https://star-history.com/#DUTIR-BioNLP/Taiyi-LLM&Date)
 
 
  

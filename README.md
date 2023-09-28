@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/qwen">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://u230271-85ef-8af46a48.westb.seetacloud.com:8443/">Demo</a>&nbsp&nbsp | &nbsp&nbsp <a href="assets/wechat.png">WeChat (微信)</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://u230271-85ef-8af46a48.westb.seetacloud.com:8443/">Demo</a>&nbsp&nbsp | &nbsp&nbsp <a href="">WeChat (微信)</a>
 <br>
 <br>
 </p>
@@ -16,27 +16,29 @@
 
 **Project Background**
 
-With the rapid development of deep learning technology, large language models like ChatGPT have made significant progress in the field of natural language processing. In the context of biomedical applications, large language models facilitate communication between healthcare professionals and patients, provide valuable medical information, and have enormous potential in assisting diagnosis, biomedical knowledge discovery, drug development, and personalized healthcare solutions, among others. However, in the AI community, there is a relative scarcity of existing open-source biomedical large models, with most of them primarily focused on monolingual medical question-answering dialogues in either Chinese or English. Therefore, this project embarks on research dedicated to large models for the biomedical domain and introduces the initial version of a bilingual Chinese-English biomedical large model named 'Taiyi', iming to explore the capabilities of large models in handling a variety of Chinese-English natural language processing tasks in the biomedical field.
+With the rapid development of deep learning technology, large language models (LLMs) like ChatGPT have made significant progress in the field of natural language processing. In the context of biomedical applications, large language models facilitate communication between healthcare professionals and patients, provide valuable medical information, and have enormous potential in assisting diagnosis, biomedical knowledge discovery, drug development, and personalized healthcare solutions, among others. However, in the AI community, there is a relative scarcity of existing open-source biomedical large models, with most of them primarily focused on monolingual medical question-answering dialogues in either Chinese or English. Therefore, this project embarks on research dedicated to large models for the biomedical domain and introduces the first version of a bilingual (Chinese and English) biomedical large language model named 'Taiyi', iming to explore the capabilities of large models in handling a variety of bilingual natural language processing tasks in the biomedical field.
 
 
 **Project Highlights**
 
-- **Abundant Biomedical Training Resources**：For the biomedical domain, this project has collected and organized a diverse set of Chinese-English biomedical Natural Language Processing (BioNLP) training datasets. This collection includes a total of 38 Chinese datasets covering 10 BioNLP tasks and 131 English datasets covering 12 BioNLP tasks. To facilitate task-specific requirements, standardized data formats have been designed and applied for consistent formatting across all datasets.
-- **Exceptional Bilingual BioNLP Multi-Task Capability in Chinese and English**：Designing and constructing a bilingual Chinese-English instruction dataset (comprising over 1 million samples) for large model fine-tuning, enabling the model to excel in various BioNLP tasks including intelligent biomedical question-answering, doctor-patient dialogues, report generation, information extraction, machine translation, headline generation, text classification, and more.
-- **Open Source Information**：Open-source Chinese-English BioNLP dataset curation details, Taiyi large model weights, and model inference deployment scripts.
+- **Rich Biomedical Training Resources**：For the biomedical domain, this project has collected and organized a diverse set of bilingual (Chinese and English) Biomedical Natural Language Processing (BioNLP) training datasets. This collection includes a total of 38 Chinese datasets covering 10 BioNLP tasks and 102 English datasets covering 12 BioNLP tasks. To facilitate task-specific requirements, standardized data formats have been designed and applied for consistent formatting across all datasets.
+- **Promising Bilingual BioNLP Multi-Task Capability**：Using rich bilingual instruction data (over 1 million samples) to fine-tune the LLM, the model show the bilingual capability in various BioNLP tasks including intelligent biomedical question-answering, biomedical dialogues, report generation, information extraction, machine translation, title generation, text classification, and more.
+- **Outstanding Generalization Capability** Besides the biomedical conversation abilities, the model still retains general domain conversation abilities. Through the design of diverse instruction templates, it exhibits good generalization across various scenarios of similar tasks, and even stimulates the model's ability for zero-shot learning.
+  
+To promote the development of NLP in the biomedical field, this project releases Chinese-English BioNLP dataset curation details, Taiyi large model weights, and model inference usage scripts.
 
 **Overview of Framework**
 
 <p align="center">
     <br>
-    <img src="./fig/overview_en.png?raw=true" width="800" height="451"/>
+    <img src="./fig/overview_en.png?raw=true" width="900" height="451"/>
     <br>
 </p>
 
 ## Contents
 - [Taiyi (太一)：A Bilingual (Chinese and English) Biomedical Large Language Model Finetuned with Rich Biomedical Data](#taiyi-太一a-bilingual-chinese-and-english-biomedical-large-language-model-finetuned-with-rich-biomedical-data)
   - [Contents](#contents)
-  - [Main Functions](#main-functions)
+  - [Use Cases](#use-cases)
     - [1. Question Answering](#1-question-answering)
     - [2. Biomedical Dialogue](#2-biomedical-dialogue)
     - [3. Medical Report Generation](#3-medical-report-generation)
@@ -67,7 +69,7 @@ With the rapid development of deep learning technology, large language models li
 
 
 
-## Main Functions
+## Use Cases
 ### 1. Question Answering
 **Task Introduction**
 
@@ -96,7 +98,7 @@ Taiyi：Dexilant (Dexlansoprazole) is a is a proton pump inhibitor that is used 
 ### 2. Biomedical Dialogue
 **Task Introduction**
 
-The Taiyi model is capable of simulating natural language conversations between doctors and patients. These conversations can encompass various biomedical topics, including medical inquiries, disease prevention, medication consultations, and more.
+The Taiyi model is capable of simulating natural language conversations between medical experts and patients. These conversations can encompass various biomedical topics, including medical inquiries, disease prevention, medication consultations, and more.
 
 <details>
   <summary><b>Examples</b></summary>
@@ -138,7 +140,7 @@ Medical report auto-generation aims to summarize information during the diagnost
 
 **Example in Chinese**
 
-**User inputs：** 
+**User Input：** 
 ```
 问诊对话历史：
 患者：小孩受凉了，流清鼻涕，咳嗽，应该是风寒咳嗽，去药店买哪种药好呢
@@ -172,7 +174,7 @@ Medical report auto-generation aims to summarize information during the diagnost
 根据上述对话，给出诊疗报告
 说明：诊疗报告分为主诉, 现病史, 辅助检查, 既往史, 诊断, 建议这六个章节。
 ```
-**Taiyi outputs：**  
+**Taiyi Output：**  
 ```   
 上述问诊对话的诊疗报告如下：
 主诉：咳嗽、流涕。
@@ -196,13 +198,13 @@ Biomedical named entity recognition aims to identify predefined biomedical entit
 
 **Example in Chinese**
 
-**User input：** 
+**User Input：** 
 ``` 
 从下面文本中识别出指定的实体类型：
 治疗以选用大环内酯类抗生素，沙眼衣原体肺炎也可用磺胺二甲基异唑，年长儿和成人用氟喹诺酮类效果也很好。
 实体类型：疾病，药物
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 上述文本中包含的疾病为：沙眼衣原体肺炎
 上述文本中包含的药物为：大环内酯类抗生素; 磺胺二甲基异唑; 氟喹诺酮类
@@ -210,12 +212,12 @@ Biomedical named entity recognition aims to identify predefined biomedical entit
 
 **Example in English**
 
-**User input：** 
+**User Input：** 
 ``` 
 Extract the gene and disease entities from the following text:
 Identification of a novel FBN1 gene mutation in a Chinese family with Marfan syndrome.
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 gene: FBN1
 disease: Marfan syndrome
@@ -225,31 +227,31 @@ disease: Marfan syndrome
 #### 4.2 Relation Extraction
 **Task Introduction**
 
-Biomedical relationship extraction aims to automatically extract relationships or associations between biomedical entities from text, such as interactions between proteins and genes, therapeutic relationships between drugs and diseases, and more.
+Biomedical relationship extraction aims to automatically extract predifined relationships or associations between biomedical entities from text, such as interactions between proteins and genes, therapeutic relationships between drugs and diseases, and more.
 
 <details>
   <summary><b>Examples</b></summary>
 
 **Example in Chinese**
 
-**User input：** 
+**User Input：** 
 ``` 
 给出句子中药物治疗关系类型的实体对：慢性阻塞性肺疾病@减少急性加重：有高质量的证据证实，β2 受体激动剂在减少 12-52 周急性加重方面比安慰剂更有效。
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 具有药物治疗关系的实体对如下：[慢性阻塞性肺疾病, β2 受体激动剂]
 ``` 
 
 **Example in English**
 
-**User input：** 
+**User Input：** 
 ``` 
 Find the relations of drug entity pairs in the text：
 Mitotane has been reported to accelerate the metabolism of warfarin by the mechanism of hepatic microsomal enzyme induction, leading to an increase in dosage requirements for warfarin. Therefore, physicians should closely monitor patients for a change in anticoagulant dosage requirements when administering Mitotane to patients on coumarin-type anticoagulants. In addition, Mitotane should be given with caution to patients receiving other drugs susceptible to the influence of hepatic enzyme induction.
 Relation Types: ADVISE, MECHANISM, EFFECT, INT
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 ADVISE: [Mitotane, coumarin-type anticoagulants]
 MECHANISM: [Mitotane, warfarin]
@@ -260,20 +262,20 @@ MECHANISM: [Mitotane, warfarin]
 #### 4.3 Event Extraction
 **Task Introduction**
 
-The goal of biomedical event extraction is to extract structured biomedical events from unstructured and vast biomedical literature, mining the described biological entities in the literature, as well as the fine-grained relationships between biomedical events. This task can save time in manually reviewing literature and provide support for the construction of relevant databases, disease diagnosis, prevention research, and more.
+Biomedical event extraction is to extract structured biomedical events from unstructured and vast biomedical literature, mining the described biological entities in the literature, as well as the fine-grained relationships between biomedical events. This task can save time in manually reviewing literature and provide support for the construction of relevant databases, disease diagnosis, prevention research, and more.
 
 <details>
   <summary><b>Examples</b></summary>
 
 **Example in Chinese**
 
-**User input：** 
+**User Input：** 
 ``` 
 找出指定的临床发现事件属性：
 因患者需期末考试，故予以口服“雷贝拉唑钠肠溶片”治疗，现腹痛情况明显好转。
 事件抽取说明：临床发现事件由主体词，发生状态，描述词和解剖部位组成
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 上述句子中的临床发现事件如下：
 主体词：疼痛；发生状态：；描述词：明显好转；解剖部位：腹
@@ -281,14 +283,14 @@ The goal of biomedical event extraction is to extract structured biomedical even
 
 **Example in English**
 
-**User input：** 
+**User Input：** 
 ``` 
 Input text: "Contaminated drinking water is responsible for causing diarrheal diseases that kill millions of people a year. Additionally, toxin-producing blue-green algae associated with diarrhea and neurologic effects continues to be an issue for many drinking water supplies. 
 Even Types: Treatment of disease, Cause of disease
 Role Types: Cause, Theme
 Please extract events from the input text.
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 Cause of disease: (Trigger: responsible, Theme: diarrheal diseases, Cause: Contaminated drinking water]
 ``` 
@@ -299,31 +301,31 @@ Cause of disease: (Trigger: responsible, Theme: diarrheal diseases, Cause: Conta
 
 **Task Introduction**
 
-Machine translation can convert biomedical texts from one natural language to another. This task can assist in translating various medical questions and recommendations, disease names, symptoms, and other information between English and Chinese, for example.
+Machine translation can convert biomedical texts from one natural language to another. This task can assist in translating various medical questions and recommendations, disease names, symptoms, and other information between English and Chinese.
 
 <details>
   <summary><b>Examples</b></summary>
 
 **Chinese to English Translation Example**
 
-**User input：** 
+**User Input：** 
 ``` 
 将下面文本翻译成英文：
 光动力疗法（PDT）作为一种新兴的肿瘤治疗手段，因其不良反应较少、靶向性好、可重复治疗等优点，已广泛应用于临床多种肿瘤的治疗。相比于手术、化疗及放疗等传统治疗策略，光动力疗法不仅可杀伤原位肿瘤，还可通过激活机体的免疫效应对转移瘤发挥抑制作用。然而，PDT诱导免疫效应的高低受多种因素影响，包括光敏剂在细胞内的定位和剂量、光参数、肿瘤内的氧浓度、免疫功能的完整性等。本文针对PDT介导抗肿瘤免疫效应的相关机制，以及PDT免疫效应的主要影响因素进行综述，以探讨PDT用于肿瘤治疗的未来发展方向。
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 As a new tumor treatment method, photodynamic therapy (pdt) has been widely used in clinical practice because of its advantages of few side effects, good targeting, and repeatability. Compared with traditional treatment strategies, such as surgery, chemotherapy, and radiotherapy, pdt can not only kill the primary tumor, but also inhibit the metastatic tumor by activating the body's immune effect. However, the induction of immune effect by pdt is affected by many factors, including the localization and dose of photosensitizers in cells, light parameters, oxygen concentration in tumor, and the integrity of immune function. In this review, we focus on themechanisms of antitumor immune effect mediated by pdt, and the main influencing factors of immune effect of pdt, to discuss the future development direction of pdt in thetumor treatment.
 ``` 
 
 **English to Chinese Translation Example**
 
-**User input：** 
+**User Input：** 
 ``` 
 Translate the following text into Chinese:
 Metabolic-associated fatty liver disease (MAFLD), formerly known as non-alcoholic fatty liver disease (NAFLD), is one of the most popular chronic liver diseases in the world. There are many explorations on the epidemiology and risk factors of the disease published in recent years. With the increasing burden of MAFLD on medical care and social economy, drug treatment of MAFLD has become an urgent research hotspot. Based on this, the current epidemiological status, risk factors, diagnostic criteria and treatment of MAFLD were summarized in this review in order to enlighten the clinical practice and scientific research of MAFLD.
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 代谢相关脂肪肝病(Metabolic Associated Fatty Liver Disease,MAFLD)又称非酒精性脂肪性肝病(Non Alcoholic Fatty Liver Disease,NAFLD)，是目前全球最为流行的慢性肝病之一。近年来，关于该病的的流行病学和危险因素的探索性研究颇多。随着MAFLD对医疗和经济的负担日益加重，其药物治疗已成为研究的热点。基于此，本文对该病的流行病学现状、危险因素、诊断标准和治疗进行了总结,以期为临床实践和科学研究提供参考。
 ``` 
@@ -341,24 +343,24 @@ Title generation aims to generate informative article titles for input biomedica
 
 **Example in Chinese**
 
-**User input：** 
+**User Input：** 
 ``` 
 请给下面摘要起标题：
 气管食管瘘是指气管或支气管与食管之间的病理性瘘道，包括气管-食管瘘和支气管-食管瘘，临床以气管-食管瘘较多见。气管食管瘘致病原因较多，可引起严重的并发症，是对患者生活质量影响显著、治疗困难和病死率较高的疾病。气管食管瘘目前治疗方式较多，但多数疗效欠佳，对新兴治疗手段的需求迫切。胸腹部X线摄影检出鼻胃管滞留是气管食管瘘诊断的金标准，其主要治疗方法包括外科手术治疗、支架置入、局部生物胶水封闭、干细胞治疗等。本文综述近年气管食管瘘诊断与治疗的主要研究进展，旨在为该病的临床诊治提供参考。
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 气管食管瘘诊断与治疗进展
 ``` 
 
 **Example in English**
 
-**User input：** 
+**User Input：** 
 ``` 
 Provide a title for the abstract:
 The incidence of diabetes mellitus has been increasing, prompting the search for non-invasive diagnostic methods. Although current methods exist, these have certain limitations, such as low reliability and accuracy, difficulty in individual patient adjustment, and discomfort during use. This paper presents a novel approach for diagnosing diabetes using high-frequency ultrasound (HFU) and a convolutional neural network (CNN). This method is based on the observation that glucose in red blood cells (RBCs) forms glycated hemoglobin (HbA1c) and accumulates on its surface. The study incubated RBCs with different glucose concentrations, collected acoustic reflection signals from them using a custom-designed 90-MHz transducer, and analyzed the signals using a CNN. The CNN was applied to the frequency spectra and spectrograms of the signal to identify correlations between changes in RBC properties owing to glucose concentration and signal features. The results confirmed the efficacy of the CNN-based approach with a classification accuracy of 0.98. This non-invasive diagnostic technology using HFU and CNN holds promise for in vivo diagnosis without the need for blood collection.
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 A novel approach for diagnosing diabetes using high-frequency ultrasound and a convolutional neural network
 ``` 
@@ -375,25 +377,25 @@ Biomedical text classification aims to automatically categorize biomedical texts
 
 **Example in Chinese**
 
-**User input：** 
+**User Input：** 
 ``` 
 现有以下文本：
 治皮肤病费用大概多少？
 请将上述文本分类至指定类别中：医疗费用，后果表述，指标解读，病情诊断，就医建议，疾病描述，其他，治疗方案，病因分析，功效作用，注意事项
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 上述文本被分类为：医疗费用
 ``` 
 
 **Example in English**
 
-**User input：** 
+**User Input：** 
 ``` 
 Document triage: "Will my mask from sherwin williams paint store with filters protect me from corona virus along with paint fumes?"
 Labels: patient, doctor
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 Result: patient
 ``` 
@@ -409,26 +411,26 @@ Text Semantic Similarity aims to determine the degree of association or similari
 
 **Example in Chinese**
 
-**User input：** 
+**User Input：** 
 ``` 
 语句1：乙肝小二阳会转成小三阳吗？
 语句2：乙肝小三阳会不会转成肝硬化、肝癌？
 请从下面选项中评估这段文本的语义相似度：语义不相同，语义相同
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 语义不相同
 ``` 
 
 **Example in English**
 
-**User input：** 
+**User Input：** 
 ``` 
 1. How can someone's happiness level affect someone's health?
 2. Can staying happy improve my health? What specific steps should I take?
 Assess the semantic similarity of the text pairs based on the following labels: dissimilar, similar
 ``` 
-**Taiyi output：**
+**Taiyi Output：**
 ``` 
 similar
 ``` 
@@ -451,7 +453,7 @@ This project compiled information on each dataset, including task type, data sca
 To facilitate subsequent data conversion, this project drew inspiration from the [BigBio](https://github.com/bigscience-workshop/biomedical) project and, based on the type of tasks, devised a unified data format. For specific details about this standardized data format, please refer to the ["DUTIR-BioNLP Data Schema Documentation"](./data_file/Task_schemas_en.md), and the data has been transformed to adhere to this standardized format.
 
 ### Instruction-Tuning Data
-After filtering and selecting datasets based on data quality, instructional templates were designed and data was transformed according to the standardized data format. The summary of the instruction-tuning data is presented in the following table:
+After filtering and selecting datasets based on data quality, instructional templates were designed based on the [PromptCBLUE](https://github.com/michael-wzhu/PromptCBLUE) Project and data was transformed according to the standardized data format. The summary of the instruction-tuning data is presented in the following table:
 
 
 <table >
@@ -462,28 +464,28 @@ After filtering and selecting datasets based on data quality, instructional temp
 </tr>
 <tr>
   <td>Named Entity Recognition</td>
-  <td>44,667</td>
-  <td>28,603</td>
+  <td align="center">44,667</td>
+  <td align="center">28,603</td>
 </tr>
 <tr>
   <td>Relation Extraction</td>
-  <td>26,606</td>
-  <td>17,279</td>
+  <td align="center">26,606</td>
+  <td align="center">17,279</td>
 </tr>
 <tr>
   <td>Event Extraction</td>
-  <td>2,992</td>
-  <td>2,022</td>
+  <td align="center">2,992</td>
+  <td align="center">2,022</td>
 </tr>
 <tr>
   <td>Text Classification</td>
-  <td>37,624</td>
-  <td>40,339</td>
+  <td align="center">37,624</td>
+  <td align="center">40,339</td>
 </tr>
 <tr>
   <td>Text Pair Task</td>
-  <td>45,548</td>
-  <td>11,237</td>
+  <td align="center">45,548</td>
+  <td align="center">11,237</td>
 </tr>
 <tr>
   <td>Machine Translation</td>
@@ -491,18 +493,18 @@ After filtering and selecting datasets based on data quality, instructional temp
 </tr>
 <tr>
   <td>Single-turn Question and Answer</td>
-  <td>129,562</td>
-  <td>57,962</td>
+  <td align="center">129,562</td>
+  <td align="center">57,962</td>
 </tr>
 <tr>
   <td>Multi-Round Dialogue</td>
-  <td>16,391</td>
-  <td>10,000</td>
+  <td align="center">16,391</td>
+  <td align="center">10,000</td>
 </tr>
 <tr>
   <td>Multi-Round Dialogue</td>
-  <td>16,391</td>
-  <td>10,000</td>
+  <td align="center">16,391</td>
+  <td align="center">10,000</td>
 </tr>
 <tr>
   <td>Other Additional Tasks</td>
@@ -510,8 +512,8 @@ After filtering and selecting datasets based on data quality, instructional temp
 </tr>
 <tr>
   <td>General Chain-of-Thought Data</td>
-  <td>50,000</td>
-  <td>7,473</td>
+  <td align="center">50,000</td>
+  <td align="center">7,473</td>
 </tr>
 <tr>
   <td>General Dialogue Data</td>
@@ -537,7 +539,7 @@ The current version of Taiyi is based on the [Qwen-7B-base](https://huggingface.
 We conducted instruction-guided fine-tuning using Qlora on 6 Nvidia A40 48 GB GPUs. Our training code was modified based on project [Firefly](https://github.com/yangjianxin1/Firefly). The key hyperparameters used in the training process are as follows:
 
 
-```json
+```
 num_train_epochs:3
 per_device_train_batch_size:12
 gradient_accumulation_steps:2
@@ -552,9 +554,10 @@ weight_decay:0
 max_grad_norm:0.3
 ```
 Our training dataset consists of approximately 1 million training samples. Each epoch of training takes approximately two days to complete. 
-## Model Usage
 
+## Model Usage
 ### Environment Setup
+
 The environment configuration we used for training and testing is as follows:
 ```
 torch==1.13.0
@@ -574,6 +577,12 @@ tiktoken
 einops
 scipy
 ```
+
+To install all dependencies automatically using the command:
+```
+$ pip install -r requirements.txt
+```
+
 ### Model Inference
 We concatenate multi-turn dialogues into the following format, and then tokenize them. Where eod is the special character <|endoftext|> in the qwen tokenizer.
 
@@ -616,12 +625,12 @@ top_p = 0.9
 temperature = 0.3
 repetition_penalty = 1.0
 
-# 开始对话
+# begin chat
 history_max_len = 1000 
 utterance_id = 0
 history_token_ids = None
 
-user_input = "你好，请问你是谁？"
+user_input = "Hi，could you please introduce yourself？"
 
 input_ids = tokenizer(user_input, return_tensors="pt", add_special_tokens=False).input_ids
 bos_token_id = torch.tensor([[tokenizer.bos_token_id]], dtype=torch.long)
@@ -638,7 +647,7 @@ with torch.no_grad():
 
 response = tokenizer.batch_decode(outputs)
 print(response[0])
-#<|endoftext|>你好，请问你是谁？<|endoftext|>您好，我是医疗语言大模型Taiyi。<|endoftext|>
+#<|endoftext|>Hi，could you please introduce yourself？<|endoftext|>Hello! My name is Taiyi,.....<|endoftext|>
 ```
 
 
@@ -659,13 +668,13 @@ The goal of this project is to explore the Chinese English bilingual natural lan
 
 - Hallucinations: Large language models sometimes generate meaningless or completely unrelated responses to a given input. This' hallucination 'may be particularly problematic when users are unfamiliar with the discussion topic, as they may not be able to easily identify errors in the model output.
 
-- Limited Information: Despite our commitment to becoming a comprehensive language model in the biomedical field, the knowledge of the model is still limited and may not cover all aspects of each field or profession. Users should be aware that the information in the model may not be comprehensive and use it with caution when in-depth or professional knowledge is needed.
+- Limited information: Despite our commitment to becoming a comprehensive language model in the biomedical field, the knowledge of the model is still limited and may not cover all aspects of each field or profession. Users should be aware that the information in the model may not be comprehensive and use it with caution when in-depth or professional knowledge is needed.
 
 - Bias: The training data of the model may contain biases, which may be reflected in the model's response. We strive to reduce bias, but we cannot completely eliminate it. Users should handle potential bias issues in model responses with caution.
 
-- Long multi-turn conversational ability: Due to the current computational constraints of our team, the max token length we could set during training was 1024. Therefore, our current model is most competitive in relatively short conversations (around 5 turns).
+- Limited long multi-turn conversational ability: Due to the current computational constraints of our team, the max token length we could set during training was 1024. Therefore, our current model is most competitive in relatively short conversations (around 5 turns).
 
-- Topic switching ability: Due to current constraints on information and computational resources, our model may exhibit instability in multi-turn conversations covering multiple topics with large spans. Therefore, when conversing with Taiyi, users should try to maintain consistency in the dialogue topic.
+- Limited topic switching ability: Due to current constraints on information and computational resources, our model may exhibit instability in multi-turn conversations covering multiple topics with large spans. Therefore, when conversing with Taiyi, users should try to maintain consistency in the dialogue topic.
 
 Note: The Taiyi model is intended to provide information and knowledge, but should not be used as a substitute for medical professionals' advice or diagnosis. Any decision involving personal health should be consulted with professional medical personnel.
 
@@ -696,6 +705,7 @@ The work of this project has been inspired and assisted by the following open-so
 - Qwen: https://github.com/QwenLM/Qwen
 - Firefly: https://github.com/yangjianxin1/Firefly
 - BigBIO: https://github.com/bigscience-workshop/biomedical
+- PromptCBLUE: https://github.com/michael-wzhu/PromptCBLUE
 - The Taiyi logo was synthesized by ERNIE Bot
 
 ## Disclaimer
@@ -727,7 +737,7 @@ If you use the repository of this project, please cite it.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=DUTIR-BioNLP/Task_schemas&type=Date)](https://star-history.com/#DUTIR-BioNLP/Task_schemas&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=DUTIR-BioNLP/Taiyi-LLM&type=Date)](https://star-history.com/#DUTIR-BioNLP/Taiyi-LLM&Date)
 
 
  
