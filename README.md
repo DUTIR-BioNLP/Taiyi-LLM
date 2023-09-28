@@ -443,7 +443,7 @@ To fully leverage existing biomedical natural language processing datasets, this
 
 <p align="center">
     <br>
-    <img src="./fig/data_overview.png?raw=true" width="1200" height="400"/>
+    <img src="./fig/data_overview.png?raw=true" width="1200" height="350"/>
     <br>
 </p>
 
