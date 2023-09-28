@@ -182,42 +182,7 @@ Medical report auto-generation aims to summarize information during the diagnost
 诊断：小儿咳嗽。
 建议：口服氨溴索、桔贝合剂，密观。
 ```    
-**Example in English**
 
-**User inputs：** 
-```
-根据对话，生成医疗报告：
-
-患者：你好，医生。我最近总是感觉头疼，尤其是在用电脑工作后。
-
-医生：你好，我很抱歉听到你不舒服。头疼的感觉是怎样的？是持续性的还是阵发性的？
-
-患者：它更像是阵发性的，特别是在我长时间盯着电脑屏幕后。
-
-医生：我明白了。你在工作或者休息的时候有没有定期休息和做眼保健操？
-
-患者：我试过，但并没有太大的帮助。
-
-医生：我明白了。这可能是由于用眼过度导致的，建议你尝试调整一下工作习惯，比如每隔一小时休息一下，远眺一下远处的风景。如果症状持续不减或者加重，建议你去医院进行进一步的检查。
-
-患者：好的，谢谢你，医生。
-```
-**Taiyi outputs：**  
-```   
-患者姓名：未知
-日期：未知
-主诉：
-     患者报告在使用电脑工作后经常感到头疼，症状呈阵发性，尤其在长时间盯着电脑屏幕后。
-     临床观察：
-     患者试过定期休息和做眼保健操，但并没有太大的帮助。
-     初步诊断：
-     可能是由于用眼过度导致的头疼。
-     建议：
-     1. 调整工作习惯，比如每隔一小时休息一下，远眺一下远处的风景。
-     2. 如果症状持续不减或者加重，建议去医院进行进一步的检查。
-
-     注意：这只是一个基本的报告，并不能代替真正的医疗咨询。如果你有任何健康问题，建议你寻求专业医生的帮助。
-```    
 </details>
 
 ### 4. Biomedical Information Extraction
@@ -269,34 +234,25 @@ Biomedical relationship extraction aims to automatically extract relationships o
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+给出句子中药物治疗关系类型的实体对：慢性阻塞性肺疾病@减少急性加重：有高质量的证据证实，β2 受体激动剂在减少 12-52 周急性加重方面比安慰剂更有效。
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+具有药物治疗关系的实体对如下：[慢性阻塞性肺疾病, β2 受体激动剂]
 ``` 
 
 **Example in English**
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+Find the relations of drug entity pairs in the text：
+Mitotane has been reported to accelerate the metabolism of warfarin by the mechanism of hepatic microsomal enzyme induction, leading to an increase in dosage requirements for warfarin. Therefore, physicians should closely monitor patients for a change in anticoagulant dosage requirements when administering Mitotane to patients on coumarin-type anticoagulants. In addition, Mitotane should be given with caution to patients receiving other drugs susceptible to the influence of hepatic enzyme induction.
+Relation Types: ADVISE, MECHANISM, EFFECT, INT
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+ADVISE: [Mitotane, coumarin-type anticoagulants]
+MECHANISM: [Mitotane, warfarin]
 ``` 
 </details>
 
@@ -313,34 +269,28 @@ The goal of biomedical event extraction is to extract structured biomedical even
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+找出指定的临床发现事件属性：
+因患者需期末考试，故予以口服“雷贝拉唑钠肠溶片”治疗，现腹痛情况明显好转。
+事件抽取说明：临床发现事件由主体词，发生状态，描述词和解剖部位组成
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+上述句子中的临床发现事件如下：
+主体词：疼痛；发生状态：；描述词：明显好转；解剖部位：腹
 ``` 
 
 **Example in English**
 
 **User input：** 
 ``` 
-请从下面的文本中提取医疗实体：
-
-主要病理改变为脑实质和脑膜水肿、充血，微小血管出血，尤以大脑海马、延髓、脑桥、小脑和咬伤部位相应的背根节及脊髓段最为严重。
+Input text: "Contaminated drinking water is responsible for causing diarrheal diseases that kill millions of people a year. Additionally, toxin-producing blue-green algae associated with diarrhea and neurologic effects continues to be an issue for many drinking water supplies. 
+Even Types: Treatment of disease, Cause of disease
+Role Types: Cause, Theme
+Please extract events from the input text.
 ``` 
 **Taiyi output：**
 ``` 
-     "身体": "脑实质", "脑膜", "大脑海马", "延髓", "脑桥", "小脑", "背根节", "脊髓段"
-     
-     "临床表现": "脑实质和脑膜水肿、充血" 
-     
-     "疾病": "微小血管出血"
+Cause of disease: (Trigger: responsible, Theme: diarrheal diseases, Cause: Contaminated drinking water]
 ``` 
 </details>
 
