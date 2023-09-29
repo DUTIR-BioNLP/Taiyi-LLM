@@ -694,7 +694,7 @@ print(response[0])
 - Firefly: https://github.com/yangjianxin1/Firefly
 - BigBIO: https://github.com/bigscience-workshop/biomedical
 - PromptCBLUE: https://github.com/michael-wzhu/PromptCBLUE
-- 太一logo 由文言一心AI合成
+- 太一logo 由文心一言AI合成
 
 ## 免责声明
 本项目相关资源仅供学术研究之用，严禁用于商业用途。对本仓库源码的使用遵循开源许可协议 [Apache 2.0](https://github.com/DUTIR-BioNLP/Taiyi-LLM/blob/main/LICENSE)。在使用过程中，用户需认真阅读并遵守以下声明：
