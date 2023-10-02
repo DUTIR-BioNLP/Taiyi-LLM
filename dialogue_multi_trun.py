@@ -44,8 +44,9 @@ while True:
         break
 
     input_ids = tokenizer(user_input, return_tensors="pt", add_special_tokens=False).input_ids
+    bos_token_id = torch.tensor([[tokenizer.bos_token_id]], dtype=torch.long)
     eos_token_id = torch.tensor([[tokenizer.eos_token_id]], dtype=torch.long)
-    user_input_ids = torch.concat([input_ids, eos_token_id], dim=1)
+    user_input_ids = torch.concat([bos_token_id,input_ids, eos_token_id], dim=1)
 
 
     if history_token_ids is None:
