@@ -12,7 +12,7 @@
 <br>
 </p>
 
-# Taiyi (太一)：A Bilingual (Chinese and English) Biomedical Large Language Model Finetuned with Rich Biomedical Data
+# Taiyi (太一): A Bilingual (Chinese and English) Fine-Tuned Large Language Model for Diverse Biomedical Tasks
 
 **Project Background**
 
@@ -722,7 +722,7 @@ If you use the repository of this project, please cite it.
 ```
 @misc{taiyi,
     author = {Taiyi-Team}.
-    title = {Taiyi: A Bilingual Biomedical Large Language Model Finetuned with Rich Biomedical Data}
+    title = {Taiyi: A Bilingual Fine-Tuned Large Language Model for Diverse Biomedical Tasks}
     year = {2023},
     publisher = {GitHub},
     journal = {GitHub repository}
