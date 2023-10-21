@@ -83,7 +83,7 @@ Biomedical question answering is designed to assist users in obtaining answers a
 
 ```
 用户：最近肚子总是隐隐作痛，感觉胀胀的，吃下去的东西都没法吸收，胃疼的特别厉害，偶尔伴有恶心想吐的感觉，请问是什么回事？
-太一：您好，根据您的描述，您可能患有胃炎。胃炎是一种常见的胃部疾病，其症状包括胃部不适、胀气、恶心、呕吐等。建议您尽快就医，医生会根据您的症状进行检查，然后开出相应的药物治疗方案。同时，您也可以注意饮食，避免辛辣、油腻、刺激性食物，多吃易消化的食物，保持良好的饮食习惯和作息规律。如果症状加重或持续时间较长，建议及时就医。希望您早日康复。
+太一：您好，根据您的描述，您可能正在经历胃肠道不适的症状。这些症状可能是由多种原因引起的，例如消化不良、胃炎、胃溃疡、胆囊炎、胆囊结石等。建议您尽快就医，进行相关检查以确定病因，并根据医生的建议进行治疗。同时，您可以注意饮食，避免辛辣、油腻、刺激性食物，多喝水，保持良好的生活习惯，避免过度劳累和情绪波动。希望您早日康复。
 ```
 
 **Example in English**
@@ -211,15 +211,15 @@ Biomedical named entity recognition aims to identify predefined biomedical entit
 ``` 
 **Taiyi Output：**
 ``` 
-上述文本中包含的疾病为：沙眼衣原体肺炎
-上述文本中包含的药物为：大环内酯类抗生素; 磺胺二甲基异唑; 氟喹诺酮类
+疾病：沙眼衣原体肺炎
+药物：大环内酯类抗生素; 磺胺二甲基异唑; 氟喹诺酮类
 ``` 
 
 **Example in English**
 
 **User Input：** 
 ``` 
-Extract the gene and disease entities from the following text:
+Extract the gene, disease entities from the following text:
 Identification of a novel FBN1 gene mutation in a Chinese family with Marfan syndrome.
 ``` 
 **Taiyi Output：**
@@ -290,7 +290,7 @@ Biomedical event extraction is to extract structured biomedical events from unst
 
 **User Input：** 
 ``` 
-Input text: "Contaminated drinking water is responsible for causing diarrheal diseases that kill millions of people a year. Additionally, toxin-producing blue-green algae associated with diarrhea and neurologic effects continues to be an issue for many drinking water supplies. 
+Input text: "Contaminated drinking water is responsible for causing diarrheal diseases that kill millions of people a year.
 Even Types: Treatment of disease, Cause of disease
 Role Types: Cause, Theme
 Please extract events from the input text.
@@ -362,7 +362,7 @@ Title generation aims to generate informative article titles for input biomedica
 
 **User Input：** 
 ``` 
-Provide a title for the abstract:
+Output a title for the following abstract:
 The incidence of diabetes mellitus has been increasing, prompting the search for non-invasive diagnostic methods. Although current methods exist, these have certain limitations, such as low reliability and accuracy, difficulty in individual patient adjustment, and discomfort during use. This paper presents a novel approach for diagnosing diabetes using high-frequency ultrasound (HFU) and a convolutional neural network (CNN). This method is based on the observation that glucose in red blood cells (RBCs) forms glycated hemoglobin (HbA1c) and accumulates on its surface. The study incubated RBCs with different glucose concentrations, collected acoustic reflection signals from them using a custom-designed 90-MHz transducer, and analyzed the signals using a CNN. The CNN was applied to the frequency spectra and spectrograms of the signal to identify correlations between changes in RBC properties owing to glucose concentration and signal features. The results confirmed the efficacy of the CNN-based approach with a classification accuracy of 0.98. This non-invasive diagnostic technology using HFU and CNN holds promise for in vivo diagnosis without the need for blood collection.
 ``` 
 **Taiyi Output：**
