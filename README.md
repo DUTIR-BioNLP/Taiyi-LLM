@@ -90,8 +90,13 @@ Biomedical question answering is designed to assist users in obtaining answers a
 
 
 ```
-User：Can Dexilant interfere with sleep?
-Taiyi：Dexilant (Dexlansoprazole) is a is a proton pump inhibitor that is used to treat gastroesophageal reflux disease (GERD) and other conditions. It is generally safe to take Dexilant before bedtime, but it may cause some people to have trouble sleeping. If you experience difficulty sleeping after taking Dexilant, you should talk to your doctor. They may suggest taking the Dexilant at a different time of day or switching to a different medication.
+User：What is the best treatment for sleep problems?
+Taiyi：The best treatment for sleep problems depends on the specific cause of the sleep problem. There are many different factors that can contribute to sleep problems, including sleep disorders, stress, anxiety, depression, medication, and lifestyle habits. Some common treatments for sleep problems include:
+1. Cognitive-behavioral therapy (CBT) for sleep disorders, which is a type of talk therapy that helps people identify and change negative thoughts and behaviors that are interfering with their sleep.
+2. Relaxation techniques, such as deep breathing, progressive muscle relaxation, and visualization, which can help people relax and fall asleep.
+3. Sleep hygiene, which is a set of practices that promote healthy sleep habits, such as avoiding caffeine and electronics before bedtime, maintaining a regular sleep schedule, and creating a relaxing bedtime routine.
+4. Medications, such as sleep aids, which can help people fall asleep and stay asleep, but may have side effects and risks.
+5. Lifestyle changes, such as exercise, avoiding alcohol and nicotine, and creating a relaxing bedtime routine, which can all help improve sleep quality..
 ```
 </details>
 
