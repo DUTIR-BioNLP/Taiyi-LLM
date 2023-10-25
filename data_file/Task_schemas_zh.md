@@ -99,7 +99,8 @@
         "offsets": [[0, 8]],
         "text": ["Naloxone"],
         "type": "Chemical",
-        "normalized": [{"db_name": "MESH", "db_id": "D009270"}]
+        "normalized": [{"db_name": "MESH",
+                        "db_id": "D009270"}]
     },
     ...
  ],
