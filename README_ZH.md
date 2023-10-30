@@ -63,6 +63,7 @@
   - [模型使用](#模型使用)
     - [环境搭建](#环境搭建)
     - [模型推理](#模型推理)
+  - [性能指标](#性能指标)
   - [局限性与未来工作](#局限性与未来工作)
   - [开发团队](#开发团队)
   - [致谢](#致谢)
@@ -693,6 +694,7 @@ print(response[0])
   <td align="center">74.0(CBLUE)</td>  
 </tr>
 <tr>
+  <td rowspan = '2'>关系抽取(Micro-F1)</th>
   <td>BC5CDR</td>
   <td align="center">37.5</td>
   <td align="center">14.2</td>
@@ -705,6 +707,7 @@ print(response[0])
   <td align="center">54.9(CBLUE)</td>  
 </tr>
 <tr>
+  <td rowspan = '3'>文本分类(Micro-F1)</th>
   <td>BC7LitCovid</td>
   <td align="center">84.0</td>
   <td align="center">63.9</td>
@@ -723,6 +726,7 @@ print(response[0])
   <td align="center">85.9(CBLUE)</td>  
 </tr>
 <tr>
+  <td rowspan = '3'>填空问答(Accuracy)</th>
   <td>PubMedQA</td>
   <td align="center">54.4</td>
   <td align="center">76.5</td>
@@ -741,6 +745,7 @@ print(response[0])
   <td align="center">70.1(RoBERTA-large)</td>  
 </tr>
 <tr>
+  <td>全部</th>
   <td>均值AVE</td>
   <td align="center">64.8</td>
   <td align="center">49.3</td>
