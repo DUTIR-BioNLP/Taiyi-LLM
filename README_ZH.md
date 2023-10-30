@@ -651,6 +651,59 @@ print(response[0])
 
 注：为了保证推理速度，建议使用4090显卡。
 
+## 性能指标
+
+<table >
+<tr>
+  <th>数据集</th>
+  <th>太一</th>
+  <th>ChatGPT3.5</th>
+  <th>SOTA</th>  
+</tr>
+<tr>
+  <td>BC5CDR-Chem</td>
+  <td align="center">79.7</td>
+  <td align="center">60.3</td>
+  <td align="center">93.3(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>BC5CDR-Dise</td>
+  <td align="center">68.6</td>
+  <td align="center">51.8</td>
+  <td align="center">85.6(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>CHEMDNER</td>
+  <td align="center">77.7</td>
+  <td align="center">36.5</td>
+  <td align="center">92.4(BioBERT)</td>  
+</tr>
+<tr>
+  <td>NCBIdisease</td>
+  <td align="center">72.9</td>
+  <td align="center">50.5</td>
+  <td align="center">87.8(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>CMeEE-dev</td>
+  <td align="center">65.6</td>
+  <td align="center">47.0</td>
+  <td align="center">74.0(CBLUE)</td>  
+</tr>
+<tr>
+  <td>BC5CDR</td>
+  <td align="center">37.5</td>
+  <td align="center">14.2</td>
+  <td align="center">45.0(BioGPT)</td>  
+</tr>
+<tr>
+  <td>CMeIE-dev</td>
+  <td align="center">43.2</td>
+  <td align="center">30.6</td>
+  <td align="center">54.9(CBLUE)</td>  
+</tr>
+</table>
+
 ## 局限性与未来工作
 **局限性**
 
