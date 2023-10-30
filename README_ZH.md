@@ -662,7 +662,7 @@ print(response[0])
   <th>SOTA</th>  
 </tr>
 <tr>
-  <td towspan = '5'>实体识别(Micro-F1)</th>
+  <td rowspan = '5'>实体识别(Micro-F1)</th>
   <td>BC5CDR-Chem</td>
   <td align="center">79.7</td>
   <td align="center">60.3</td>
