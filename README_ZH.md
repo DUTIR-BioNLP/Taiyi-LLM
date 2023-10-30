@@ -655,12 +655,14 @@ print(response[0])
 
 <table >
 <tr>
+  <th>任务类型</th>
   <th>数据集</th>
   <th>太一</th>
   <th>ChatGPT3.5</th>
   <th>SOTA</th>  
 </tr>
 <tr>
+  <td towspan = '5'>实体识别(Micro-F1)</th>
   <td>BC5CDR-Chem</td>
   <td align="center">79.7</td>
   <td align="center">60.3</td>
@@ -701,6 +703,48 @@ print(response[0])
   <td align="center">43.2</td>
   <td align="center">30.6</td>
   <td align="center">54.9(CBLUE)</td>  
+</tr>
+<tr>
+  <td>BC7LitCovid</td>
+  <td align="center">84.0</td>
+  <td align="center">63.9</td>
+  <td align="center">91.8(Bioformer)</td>  
+</tr>
+<tr>
+  <td>HOC</td>
+  <td align="center">80.0</td>
+  <td align="center">51.2</td>
+  <td align="center">82.3(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>KUAKE_QIC-dev</td>
+  <td align="center">77.4</td>
+  <td align="center">48.5</td>
+  <td align="center">85.9(CBLUE)</td>  
+</tr>
+<tr>
+  <td>PubMedQA</td>
+  <td align="center">54.4</td>
+  <td align="center">76.5</td>
+  <td align="center">55.8(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>MedQA-USMLE</td>
+  <td align="center">37.1</td>
+  <td align="center">51.3</td>
+  <td align="center">36.7(BioBERT-large)</td>  
+</tr>
+<tr>
+  <td>MedQA-MCMLE</td>
+  <td align="center">64.8</td>
+  <td align="center">58.2</td>
+  <td align="center">70.1(RoBERTA-large)</td>  
+</tr>
+<tr>
+  <td>均值AVE</td>
+  <td align="center">64.8</td>
+  <td align="center">49.3</td>
+  <td align="center">73.5</td>  
 </tr>
 </table>
 
