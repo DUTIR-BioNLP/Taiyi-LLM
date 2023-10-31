@@ -665,31 +665,31 @@ print(response[0])
 <tr>
   <td rowspan = '5'>实体识别(Micro-F1)</th>
   <td>BC5CDR-Chem</td>
-  <td align="center">79.7</td>
+  <td align="center">80.2</td>
   <td align="center">60.3</td>
   <td align="center">93.3(PubMedBERT)</td>  
 </tr>
 <tr>
   <td>BC5CDR-Dise</td>
-  <td align="center">68.6</td>
+  <td align="center">69.1</td>
   <td align="center">51.8</td>
   <td align="center">85.6(PubMedBERT)</td>  
 </tr>
 <tr>
   <td>CHEMDNER</td>
-  <td align="center">77.7</td>
+  <td align="center">79.9</td>
   <td align="center">36.5</td>
   <td align="center">92.4(BioBERT)</td>  
 </tr>
 <tr>
   <td>NCBIdisease</td>
-  <td align="center">72.9</td>
+  <td align="center">73.1</td>
   <td align="center">50.5</td>
   <td align="center">87.8(PubMedBERT)</td>  
 </tr>
 <tr>
   <td>CMeEE-dev</td>
-  <td align="center">65.6</td>
+  <td align="center">65.7</td>
   <td align="center">47.0</td>
   <td align="center">74.0(CBLUE)</td>  
 </tr>
