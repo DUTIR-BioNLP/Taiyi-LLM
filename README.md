@@ -60,7 +60,7 @@ To promote the development of NLP in the biomedical field, this project releases
   - [Model Usage](#model-usage)
     - [Environment Setup](#environment-setup)
     - [Model Inference](#model-inference)
-  - [Overall Performance](#Overall Performance)
+  - [Overall Performance](#overall-performance)
   - [Limitation and Future Work](#limitation-and-future-work)
   - [Development Team](#development-team)
   - [Acknowledgements](#acknowledgements)
