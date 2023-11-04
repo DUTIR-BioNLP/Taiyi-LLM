@@ -60,6 +60,7 @@ To promote the development of NLP in the biomedical field, this project releases
   - [Model Usage](#model-usage)
     - [Environment Setup](#environment-setup)
     - [Model Inference](#model-inference)
+  - [Overall Performance](#Overall Performance)
   - [Limitation and Future Work](#limitation-and-future-work)
   - [Development Team](#development-team)
   - [Acknowledgements](#acknowledgements)
@@ -656,7 +657,106 @@ We provide two test codes for dialogue. You can use the code in ```dialogue_one_
 
 Note: To ensure fast inference speed, we recommend using a 4090 GPU.
 
+## Overall Performance
 
+<table >
+<tr>
+  <th>Task Type</th>
+  <th>Dataset</th>
+  <th>Taiyi</th>
+  <th>ChatGPT3.5</th>
+  <th>SOTA</th>  
+</tr>
+<tr>
+  <td rowspan = '5'>NER(Micro-F1)</th>
+  <td>BC5CDR-Chem</td>
+  <td align="center">80.2</td>
+  <td align="center">60.3</td>
+  <td align="center">93.3(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>BC5CDR-Dise</td>
+  <td align="center">69.1</td>
+  <td align="center">51.8</td>
+  <td align="center">85.6(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>CHEMDNER</td>
+  <td align="center">79.9</td>
+  <td align="center">36.5</td>
+  <td align="center">92.4(BioBERT)</td>  
+</tr>
+<tr>
+  <td>NCBIdisease</td>
+  <td align="center">73.1</td>
+  <td align="center">50.5</td>
+  <td align="center">87.8(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>CMeEE-dev</td>
+  <td align="center">65.7</td>
+  <td align="center">47.0</td>
+  <td align="center">74.0(CBLUE)</td>  
+</tr>
+<tr>
+  <td rowspan = '2'>RE(Micro-F1)</th>
+  <td>BC5CDR</td>
+  <td align="center">37.5</td>
+  <td align="center">14.2</td>
+  <td align="center">45.0(BioGPT)</td>  
+</tr>
+<tr>
+  <td>CMeIE-dev</td>
+  <td align="center">43.2</td>
+  <td align="center">30.6</td>
+  <td align="center">54.9(CBLUE)</td>  
+</tr>
+<tr>
+  <td rowspan = '3'>TC(Micro-F1)</th>
+  <td>BC7LitCovid</td>
+  <td align="center">84.0</td>
+  <td align="center">63.9</td>
+  <td align="center">91.8(Bioformer)</td>  
+</tr>
+<tr>
+  <td>HOC</td>
+  <td align="center">80.0</td>
+  <td align="center">51.2</td>
+  <td align="center">82.3(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>KUAKE_QIC-dev</td>
+  <td align="center">77.4</td>
+  <td align="center">48.5</td>
+  <td align="center">85.9(CBLUE)</td>  
+</tr>
+<tr>
+  <td rowspan = '3'>QA(Accuracy)</th>
+  <td>PubMedQA</td>
+  <td align="center">54.4</td>
+  <td align="center">76.5</td>
+  <td align="center">55.8(PubMedBERT)</td>  
+</tr>
+<tr>
+  <td>MedQA-USMLE</td>
+  <td align="center">37.1</td>
+  <td align="center">51.3</td>
+  <td align="center">36.7(BioBERT-large)</td>  
+</tr>
+<tr>
+  <td>MedQA-MCMLE</td>
+  <td align="center">64.8</td>
+  <td align="center">58.2</td>
+  <td align="center">70.1(RoBERTA-large)</td>  
+</tr>
+<tr>
+  <td>ALL</th>
+  <td>AVE</td>
+  <td align="center">64.8</td>
+  <td align="center">49.3</td>
+  <td align="center">73.5</td>  
+</tr>
+</table>
 
 ## Limitation and Future Work
 
