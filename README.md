@@ -544,7 +544,7 @@ We conducted instruction-guided fine-tuning using Qlora on 6 Nvidia A40 48 GB GP
 num_train_epochs:3
 per_device_train_batch_size:12
 gradient_accumulation_steps:2
-earning_rate:0.0002
+learning_rate:0.0002
 max_seq_length:1024
 lr_scheduler_type:"constant_with_warmup"
 warmup_ratio:0.1
