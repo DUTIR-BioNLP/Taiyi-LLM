@@ -3,7 +3,8 @@
 - [Overview of the Biomedical Datasets](#overview-of-the-biomedical-datasets)
   - [Chinese Datasets](#chinese-datasets)
   - [English Datasets](#english-datasets)
-
+- [Summary of final instruction data](./final_instruction_data.md)
+- [Task Schema Harmonization](./Task_schemas_en.md)
 
 ## Chinese Datasets
 
