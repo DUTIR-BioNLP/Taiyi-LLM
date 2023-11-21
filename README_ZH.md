@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://u230271-8d67-862a10ff.westb.seetacloud.com:8443/">Demo</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">DatasetInf</a>&nbsp&nbsp |  &nbsp&nbsp<a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp<a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://u230271-8d67-862a10ff.westb.seetacloud.com:8443/">Demo</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">DatasetInf</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://arxiv.org/abs/2311.11608">arXiv</a>&nbsp&nbsp | &nbsp&nbsp<a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp<a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
 <br>
 <br>
 </p>
@@ -814,16 +814,15 @@ print(response[0])
 
 
 ## 引用
-如果你使用到了本项目的仓库，请引用本项目。
+如果你使用到了本项目的仓库，请引用。
 ```
-@misc{taiyi,
-    author = {Taiyi-Team}.
-    title = {Taiyi: A Biomedical Large Language Model Finetuned with Rich Bilingual Biomedical Data}
-    year = {2023},
-    publisher = {GitHub},
-    journal = {GitHub repository}
-    howpublished = {\url{https://github.com/DUTIR-BioNLP/Taiyi-LLM}}
+@article{Taiyi,
+  title="{Taiyi: A Bilingual Fine-Tuned Large Language Model for Diverse Biomedical Tasks}",
+  author={Ling Luo, Jinzhong Ning, Yingwen Zhao, Zhijun Wang, Zeyuan Ding, Peng Chen, Weiru Fu, Qinyu Han, Guangtao Xu, Yunzhi Qiu, Dinghao Pan, Jiru Li, Hao Li, Wenduo Feng, Senbo Tu, Yuqi Liu, Zhihao Yang, Jian Wang, Yuanyuan Sun, Hongfei Lin},
+  journal={arXiv preprint arXiv:2311.11608},
+  year={2023},
 }
+
 ```
 
 ## Star History
