@@ -233,7 +233,7 @@ disease: Marfan syndrome
 #### 4.2 Relation Extraction
 **Task Introduction**
 
-Biomedical relationship extraction aims to automatically extract predifined relationships or associations between biomedical entities from text, such as interactions between proteins and genes, therapeutic relationships between drugs and diseases, and more.
+Biomedical relationship extraction aims to automatically extract predefined relationships or associations between biomedical entities from text, such as interactions between proteins and genes, therapeutic relationships between drugs and diseases, and more.
 
 <details>
   <summary><b>Examples</b></summary>
