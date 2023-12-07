@@ -34,10 +34,6 @@
 | medmentions | NER | en | 2825 |
 | mirna | NER | en | 379 |
 | mlee | NER | en | 255 |
-| n2c2_2006_deid | NER | en | 464 |
-| n2c2_2010_relation | NER | en | 101 |
-| n2c2_2014_deid | NER | en | 430 |
-| n2c2_2018_track2 | NER | en | 22 |
 | ncbi_disease | NER | en | 592 |
 | nlm_gene | NER | en | 448 |
 | osiris | NER | en | 199 |
@@ -83,7 +79,6 @@
 | hallmarks_of_cancer | TC | en | 10000 |
 | kuake_qic | TC | zh | 7624 |
 | meddialog | TC | en | 1079 |
-| n2c2_2006_smokers | TC | en | 193 |
 | scicite | TC | en | 9067 |
 | tcm_sd_tc | TC | zh | 10000 |
 | biosses | TP-ss | en | 70 |
