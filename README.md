@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">DatasetInf</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://arxiv.org/abs/2311.11608">arXiv</a>&nbsp&nbsp| &nbsp&nbsp <a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp <a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo(INT8)</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">DatasetInf</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://arxiv.org/abs/2311.11608">arXiv</a>&nbsp&nbsp| &nbsp&nbsp <a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp <a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
 <br>
 <br>
 </p>
@@ -18,6 +18,8 @@
 
 With the rapid development of deep learning technology, large language models (LLMs) like ChatGPT have made significant progress in the field of natural language processing. In the context of biomedical applications, large language models facilitate communication between healthcare professionals and patients, provide valuable medical information, and have enormous potential in assisting diagnosis, biomedical knowledge discovery, drug development, and personalized healthcare solutions, among others. However, in the AI community, there is a relative scarcity of existing open-source biomedical large models, with most of them primarily focused on monolingual medical question-answering dialogues in either Chinese or English. Therefore, this project embarks on research dedicated to large models for the biomedical domain and introduces the first version of a bilingual (Chinese and English) biomedical large language model named 'Taiyi', aiming to explore the capabilities of large models in handling a variety of bilingual natural language processing tasks in the biomedical field.
 
+**NEWs**
+- 2024/01/03 Due to limited resources, the demo was moved to huggingface space and used INT8 quantitative deployment. To experience better results, it is recommended to download weights and use scripts for non-quantitative deployment testing.
 
 **Project Highlights**
 
