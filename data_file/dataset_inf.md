@@ -1,5 +1,6 @@
-# Overview of the Biomedical Datasets
 
+# Overview of the Biomedical Datasets
+(We released our raw instruction data ([Taiyi_Instruction_Data_001](https://github.com/DUTIR-BioNLP/Taiyi-LLM/releases/download/Taiyi_Instruction_Data_001/Taiyi_Instruction_Data_001.zip))
 - [Overview of the Biomedical Datasets](#overview-of-the-biomedical-datasets)
   - [Chinese Datasets](#chinese-datasets)
   - [English Datasets](#english-datasets)
