@@ -1,6 +1,6 @@
 
 # Overview of the Biomedical Datasets
-(We released our raw instruction data ([Taiyi_Instruction_Data_001](https://github.com/DUTIR-BioNLP/Taiyi-LLM/releases/download/Taiyi_Instruction_Data_001/Taiyi_Instruction_Data_001.zip))
+We released our raw instruction data ([Taiyi_Instruction_Data_001](https://github.com/DUTIR-BioNLP/Taiyi-LLM/releases/download/Taiyi_Instruction_Data_001/Taiyi_Instruction_Data_001.zip)). The data is distributed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?spm=a2c22.12282016.0.0.32263d000YGHLB). The original benchmark datasets that support this study are available from the official websites of natural language processing challenges with Data Use Agreements.
 - [Overview of the Biomedical Datasets](#overview-of-the-biomedical-datasets)
   - [Chinese Datasets](#chinese-datasets)
   - [English Datasets](#english-datasets)
