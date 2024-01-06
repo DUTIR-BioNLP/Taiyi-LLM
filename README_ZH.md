@@ -458,7 +458,7 @@ similar
 为了后续进行指令数据转换，本项目借鉴了[BigBio](https://github.com/bigscience-workshop/biomedical)项目,在其基础上根据任务类型设计制定了数据的统一格式，具体数据统一格式见[《DUTIR BioNLP数据统一格式》](./data_file/Task_schemas_zh.md)，并将数据处理成制定的统一格式。
 
 ### 指令数据集
-根据数据集质量筛选和过滤后，在数据统一格式基础上，借鉴[PromptCBLUE](https://github.com/michael-wzhu/PromptCBLUE)项目设计了多种指令模板并进行指令数据转换。此外，为了保留通用领域的对话能力和增强模型的推理能力，本项目还加入了通用领域的对话和思维链数据，最终用于大模型训练的指令数据简表统计如下表：
+根据数据集质量筛选和过滤后，在数据统一格式基础上，借鉴[PromptCBLUE](https://github.com/michael-wzhu/PromptCBLUE)项目设计了多种指令模板并进行指令数据转换。此外，为了保留通用领域的对话能力和增强模型的推理能力，本项目还加入了通用领域的对话，最终用于大模型训练的指令数据简表统计如下表：
 
 
 
@@ -512,17 +512,12 @@ similar
   <td colspan ="2"; align="center">9,370</td>
 </tr>
 <tr>
-  <td>通用思维链数据</td>
-  <td align="center">50,000</td>
-  <td align="center">7,473</td>
-</tr>
-<tr>
   <td>通用对话数据</td>
-  <td colspan ="2"; align="center">390,000</td>
+  <td colspan ="2"; align="center">560,000</td>
 </tr>
 <tr>
   <td>总计</td>
-  <td colspan ="2"; align="center">1,001,788</td>
+  <td colspan ="2"; align="center">1,114,315</td>
 </tr>
 </table>
 
