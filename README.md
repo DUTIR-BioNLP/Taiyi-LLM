@@ -515,17 +515,12 @@ After filtering and selecting datasets based on data quality, instructional temp
   <td colspan ="2"; align="center">9,370</td>
 </tr>
 <tr>
-  <td>General Chain-of-Thought Data</td>
-  <td align="center">50,000</td>
-  <td align="center">7,473</td>
-</tr>
-<tr>
   <td>General Dialogue Data</td>
-  <td colspan ="2"; align="center">390,000</td>
+  <td colspan ="2"; align="center">560,000</td>
 </tr>
 <tr>
   <td>Total</td>
-  <td colspan ="2"; align="center">1,001,788</td>
+  <td colspan ="2"; align="center">1,114,315</td>
 </tr>
 </table>
 
