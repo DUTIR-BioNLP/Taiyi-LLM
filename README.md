@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo(INT8)</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">Data</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://arxiv.org/abs/2311.11608">arXiv</a>&nbsp&nbsp| &nbsp&nbsp <a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp <a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo(INT8)</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">Data</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://doi.org/10.1093/jamia/ocae037">paper</a>&nbsp&nbsp| &nbsp&nbsp <a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp <a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
 <br>
 <br>
 </p>
@@ -19,6 +19,7 @@
 With the rapid development of deep learning technology, large language models (LLMs) like ChatGPT have made significant progress in the field of natural language processing. In the context of biomedical applications, large language models facilitate communication between healthcare professionals and patients, provide valuable medical information, and have enormous potential in assisting diagnosis, biomedical knowledge discovery, drug development, and personalized healthcare solutions, among others. However, in the AI community, there is a relative scarcity of existing open-source biomedical large models, with most of them primarily focused on monolingual medical question-answering dialogues in either Chinese or English. Therefore, this project embarks on research dedicated to large models for the biomedical domain and introduces the first version of a bilingual (Chinese and English) biomedical large language model named 'Taiyi', aiming to explore the capabilities of large models in handling a variety of bilingual natural language processing tasks in the biomedical field.
 
 **NEWs**
+- 2024/03/01 Our paper is online in (JAMIA)[https://doi.org/10.1093/jamia/ocae037] 
 - 2024/01/05 We released our raw instruction data ([**Taiyi_Instruction_Data_001**](https://github.com/DUTIR-BioNLP/Taiyi-LLM/releases/download/Taiyi_Instruction_Data_001/Taiyi_Instruction_Data_001.zip)). The data is distributed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?spm=a2c22.12282016.0.0.32263d000YGHLB). The original benchmark datasets that support this study are available from the official websites of natural language processing challenges with Data Use Agreements.
 - 2024/01/03 Due to limited resources, the demo was moved to huggingface space and used INT8 quantitative deployment. To experience better results, it is recommended to download weights and use scripts for non-quantitative deployment testing.
 
@@ -826,8 +827,10 @@ If you use the repository of this project, please cite it.
 @article{Taiyi,
   title="{Taiyi: A Bilingual Fine-Tuned Large Language Model for Diverse Biomedical Tasks}",
   author={Ling Luo, Jinzhong Ning, Yingwen Zhao, Zhijun Wang, Zeyuan Ding, Peng Chen, Weiru Fu, Qinyu Han, Guangtao Xu, Yunzhi Qiu, Dinghao Pan, Jiru Li, Hao Li, Wenduo Feng, Senbo Tu, Yuqi Liu, Zhihao Yang, Jian Wang, Yuanyuan Sun, Hongfei Lin},
-  journal={arXiv preprint arXiv:2311.11608},
-  year={2023},
+  journal={Journal of the American Medical Informatics Association},
+  year={2024},
+  doi = {10.1093/jamia/ocae037},
+  url = {https://doi.org/10.1093/jamia/ocae037},
 }
 ```
 
