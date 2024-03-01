@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo(INT8)</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">Data</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://arxiv.org/abs/2311.11608">arXiv</a>&nbsp&nbsp | &nbsp&nbsp<a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp<a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo(INT8)</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">Data</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://doi.org/10.1093/jamia/ocae037">paper</a>&nbsp&nbsp | &nbsp&nbsp<a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp<a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
 <br>
 <br>
 </p>
@@ -19,6 +19,7 @@
 随着深度学习技术的迅速发展，类ChatGPT这样的大语言模型在自然语言处理领域已经取得了显著的进展。面向生物医学领域，大语言模型有助于医生与患者之间的沟通，提供有用的医学信息，并在辅助诊疗、生物医学知识发现、药物研发、个性化医疗方案等方面具有巨大潜力。然而，在人工智能社区中，已有的开源生物医学大模型相对较少，且大多主要专注于单语（中文或英语）的医疗问答对话。因此，本项目开展了面向生物医学领域大模型的研究，并发布初版中英双语生物医学大模型——太一（Taiyi），旨在探索大模型在生物医学领域中双语自然语言处理多任务的能力。
 
 **更新**
+- 2024/03/01 太一论文在JAMIA期刊上线，论文地址：[https://doi.org/10.1093/jamia/ocae037](https://doi.org/10.1093/jamia/ocae037)
 - 2024/01/05 开源原始的指令数据集([**Taiyi_Instruction_Data_001**](https://github.com/DUTIR-BioNLP/Taiyi-LLM/releases/download/Taiyi_Instruction_Data_001/Taiyi_Instruction_Data_001.zip))。数据大部分遵循 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?spm=a2c22.12282016.0.0.32263d000YGHLB)协议，若原始数据集任务有其他协议的请遵循原始数据集相应协议。
 - 2024/01/03 由于资源有限，demo迁移至huggingface space，采用INT8量化部署。若要体验更好效果，建议下载权重使用脚本非量化部署测试。
 - 2023/10/29 CHIP2023专题论坛引导发言[PPT](./CHIP2023-太一-罗凌-1028.pdf)
@@ -815,8 +816,10 @@ print(response[0])
 @article{Taiyi,
   title="{Taiyi: A Bilingual Fine-Tuned Large Language Model for Diverse Biomedical Tasks}",
   author={Ling Luo, Jinzhong Ning, Yingwen Zhao, Zhijun Wang, Zeyuan Ding, Peng Chen, Weiru Fu, Qinyu Han, Guangtao Xu, Yunzhi Qiu, Dinghao Pan, Jiru Li, Hao Li, Wenduo Feng, Senbo Tu, Yuqi Liu, Zhihao Yang, Jian Wang, Yuanyuan Sun, Hongfei Lin},
-  journal={arXiv preprint arXiv:2311.11608},
-  year={2023},
+  journal={Journal of the American Medical Informatics Association},
+  year={2024},
+  doi = {10.1093/jamia/ocae037},
+  url = {https://doi.org/10.1093/jamia/ocae037},
 }
 
 ```
