@@ -7,7 +7,7 @@
 
 
 <p align="center">
-        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="https://huggingface.co/spaces/lingbionlp/Taiyi-LLM">Demo(INT8)</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">Data</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://doi.org/10.1093/jamia/ocae037">paper</a>&nbsp&nbsp| &nbsp&nbsp <a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp <a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
+        🤗 <a href="https://huggingface.co/DUTIR-BioNLP/Taiyi-LLM">Hugging Face</a>&nbsp&nbsp | &nbsp&nbsp🤖 <a href="https://modelscope.cn/models/DUTIRbionlp/Taiyi-LLM/">ModelScope<a>&nbsp&nbsp | &nbsp&nbsp🖥️ <a href="http://117.161.233.22:1234/">Demo</a>&nbsp&nbsp | 📃<a href="./data_file/dataset_inf.md">Data</a>&nbsp&nbsp | &nbsp&nbsp <a href="https://doi.org/10.1093/jamia/ocae037">paper</a>&nbsp&nbsp| &nbsp&nbsp <a href="https://mp.weixin.qq.com/s/HlyzalsxdNy6yFV2iGqbBQ">WeChat (微信)</a> | &nbsp&nbsp <a href="https://www.wisemodel.cn/models/DUTIR-BioNLP/Taiyi">Wisemodel</a>
 <br>
 <br>
 </p>
