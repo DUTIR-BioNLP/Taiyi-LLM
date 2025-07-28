@@ -32,7 +32,7 @@
 
 <p align="center">
     <br>
-    <img src="./fig/taiyi2_performance.png?raw=true" width="800" height="381"/>
+    <img src="./fig/taiyi2_performance.png?raw=true" width="800" height="499"/>
     <br>
 </p>
 
@@ -196,7 +196,8 @@ $ pip install -r requirements.txt
 
 ### 模型推理
 
-参考taiyi2_chat.py文件，为了保证推理速度，建议使用GPU显卡。
+参考`taiyi2_chat.py`文件，为了保证推理速度，建议使用GPU显卡。
+
 
 ## 开发团队
 
